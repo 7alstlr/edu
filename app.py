@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 import numpy as np
 from datetime import datetime
 import calendar
+from supabase import create_client
 
 st.set_page_config(
     page_title="DB 모니터링",
@@ -170,11 +171,58 @@ st.markdown("""
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv('dba_monitoring.csv')
-    df['timestamp'] = pd.to_datetime(df['timestamp'])
-    return df
+    """Supabase에서 DBA 모니터링 데이터 로드"""
+    try:
+        # Streamlit Secrets에서 Supabase 정보 로드
+        supabase_url = st.secrets["supabase_url"]
+        supabase_key = st.secrets["supabase_key"]
+
+        # Supabase 클라이언트 초기화
+        supabase = create_client(supabase_url, supabase_key)
+
+        # dba_monitoring 테이블에서 모든 데이터 조회
+        response = supabase.table("dba_monitoring").select("*").execute()
+
+        if not response.data:
+            st.error("❌ Supabase에서 데이터를 로드할 수 없습니다.")
+            return pd.DataFrame()
+
+        # DataFrame으로 변환
+        df = pd.DataFrame(response.data)
+
+        # 컬럼명 매핑 (Supabase 컬럼을 기존 CSV 형식으로 변환)
+        df.rename(columns={
+            'db_name': 'DB명',
+            'cpu_usage': 'CPU사용율(%)',
+            'active_sessions': 'Active Session 수',
+            'lock_sessions': 'Lock Session 수',
+            'alertlog_count': 'AlertLog Count'
+        }, inplace=True)
+
+        # timestamp를 datetime으로 변환
+        df['timestamp'] = pd.to_datetime(df['timestamp'])
+
+        return df
+
+    except KeyError:
+        st.error("❌ Streamlit Secrets에 'supabase_url'과 'supabase_key'가 필요합니다.")
+        st.info("""
+        `.streamlit/secrets.toml` 파일을 생성하고 다음을 추가하세요:
+        ```
+        supabase_url = "https://qllwpvkzsybjlhhuvbto.supabase.co"
+        supabase_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        ```
+        """)
+        return pd.DataFrame()
+    except Exception as e:
+        st.error(f"❌ 데이터 로드 중 오류: {str(e)}")
+        return pd.DataFrame()
 
 df = load_data()
+
+if df.empty:
+    st.stop()
+
 data_min = df['timestamp'].min()
 data_max = df['timestamp'].max()
 db_options = sorted(df['DB명'].unique())
@@ -185,7 +233,7 @@ if 'applied_start' not in st.session_state:
     st.session_state.applied_dbs = list(db_options)
 
 st.title('📊 DB 모니터링')
-st.markdown('<p style="color: #7f8c8d; font-size: 14px;">데이터베이스 실시간 모니터링 대시보드</p>', unsafe_allow_html=True)
+st.markdown('<p style="color: #7f8c8d; font-size: 14px;">데이터베이스 실시간 모니터링 대시보드 (Supabase 연동)</p>', unsafe_allow_html=True)
 st.markdown('---')
 
 with st.sidebar:
@@ -307,7 +355,7 @@ date_range = f"{filtered_df['timestamp'].min().strftime('%Y/%m/%d')} ~ {filtered
 
 with col1:
     fig_cpu = go.Figure()
-    for db_name in selected_dbs:
+    for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
         fig_cpu.add_trace(go.Scatter(
             x=db_data['timestamp'],
@@ -345,7 +393,7 @@ with col1:
 
 with col2:
     fig_session = go.Figure()
-    for db_name in selected_dbs:
+    for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
         fig_session.add_trace(go.Scatter(
             x=db_data['timestamp'],
@@ -385,7 +433,7 @@ col3, col4 = st.columns(2)
 
 with col3:
     fig_lock = go.Figure()
-    for db_name in selected_dbs:
+    for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
         fig_lock.add_trace(go.Scatter(
             x=db_data['timestamp'],
@@ -424,7 +472,7 @@ with col3:
 
 with col4:
     fig_alert = go.Figure()
-    for db_name in selected_dbs:
+    for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
         fig_alert.add_trace(go.Scatter(
             x=db_data['timestamp'],
@@ -482,4 +530,4 @@ with col2:
     )
 
 st.markdown('---')
-st.caption('🔧 © 2026 홈앤쇼핑 DB 모니터링 시스템')
+st.caption('🔧 © 2026 홈앤쇼핑 DB 모니터링 시스템 (Supabase 연동)')
