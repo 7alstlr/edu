@@ -1,0 +1,434 @@
+Oracle ORA Error Code Data Collection Report
+==============================================
+
+Date: 2026-06-04
+Source: https://docs.oracle.com/en/error-help/db/ora-index.html
+
+SUMMARY
+-------
+Total ORA Error Codes Found: 25,046 unique error codes
+Range: ORA-00000 to ORA-65535
+Sample Size: 346 representative codes from various ranges
+
+IMPORTANT NOTE
+--------------
+The Oracle error index page contains LINKS to 25,046 individual error code pages.
+However, the page itself does NOT display error names/descriptions in a single list.
+Each error code requires a separate page fetch to retrieve its description.
+
+FULL DATA COLLECTION CHALLENGE
+------------------------------
+To collect all 25,046 error codes with descriptions would require:
+- 25,046 individual HTTP requests (one per error code page)
+- Estimated time: ~2-3 hours with respectful rate limiting (50-100ms per request)
+- This would be a significant load on Oracle's documentation servers
+
+SAMPLE DATA (346 Error Codes)
+=============================
+Format: ORA-CODE|Error Name/Description|
+
+ORA-00000|normal, successful completion|
+ORA-00001|unique constraint (constraint_schema.constraint_name) violated on table table_schema.table_name columns (column_names)|
+ORA-00016|Unable to set more than string sessions for developer's instance|
+ORA-00017|session requested to set trace event|
+ORA-00018|maximum number of sessions exceeded|
+ORA-00019|maximum number of session licenses exceeded|
+ORA-00020|exceeded maximum number of processes specified in initialization parameter|
+ORA-00021|Cannot switch session because that session is being used by other users.|
+ORA-00022|invalid session ID; access denied|
+ORA-00023|session references process private memory; cannot detach session|
+ORA-00024|logins from more than one process not allowed in single-process mode|
+ORA-00025|SGA memory allocation request of string failed.|
+ORA-00026|missing or invalid session ID|
+ORA-00027|cannot kill current session|
+ORA-00028|session has been terminated|
+ORA-00029|session is not a user session|
+ORA-00030|User session ID does not exist.|
+ORA-00031|session marked for kill|
+ORA-00032|invalid session migration password|
+ORA-00033|current session has empty migration password|
+ORA-00034|cannot string in current PL/SQL session|
+ORA-00035|LICENSE_MAX_USERS cannot be less than current number of users.|
+ORA-00036|maximum number of recursive SQL levels (string) exceeded|
+ORA-00037|cannot switch to a session belonging to a different server group|
+ORA-00038|Cannot create session: server group belongs to another user|
+ORA-00039|error during periodic action|
+ORA-00040|active time limit exceeded - call aborted|
+ORA-00041|active time limit exceeded - session terminated|
+ORA-00042|Unknown Service name string|
+ORA-00043|remote operation failed|
+ORA-00044|timed_statistics parameter must be TRUE when statistics_level parameter is not BASIC|
+ORA-00045|Your session has been terminated with no replay.|
+ORA-00046|cannot modify sessions parameter|
+ORA-00047|cannot set sessions parameter to this value|
+ORA-00049|maximum number of DB_FILES exceeded for the PDB|
+ORA-00050|Operating system error occurred while obtaining an enqueue.|
+ORA-00051|timeout occurred while waiting for a resource|
+ORA-00052|maximum number of enqueue resources (string) exceeded|
+ORA-00053|maximum number of enqueues exceeded|
+ORA-00054|Failed to acquire a lock (Type: "Type", Name: "Name", Description: "Description") because it is currently held by another session. The resource being locked can be identified by ID1_value ("ID1_description") and ID2_value ("ID2_description")|
+ORA-00055|maximum number of DML locks exceeded|
+ORA-00056|DDL lock on object 'string.string' is already held in an incompatible mode|
+ORA-00057|maximum number of temporary table locks exceeded|
+ORA-00058|DB_BLOCK_SIZE must be string to mount this database (not string)|
+ORA-00059|maximum number of DB_FILES exceeded|
+ORA-00060|deadlock detected while waiting for resource|
+ORA-00061|another instance has a different DML_LOCKS setting|
+ORA-00062|DML full-table lock cannot be acquired; DML_LOCKS is 0|
+ORA-00063|maximum number of log files exceeded string|
+ORA-00064|object is too large to allocate on this O/S (string,string,string)|
+ORA-00116|SERVICE_NAMES name is too long|
+ORA-00117|PROTOCOL, ADDRESS or DESCRIPTION must be specified|
+ORA-00118|Only one of PROTOCOL, ADDRESS or DESCRIPTION may be specified|
+ORA-00119|invalid specification for system parameter string|
+ORA-00120|invalid 'shared_servers' value for the PDB|
+ORA-00122|cannot initialize network configuration|
+ORA-00123|idle public server terminating|
+ORA-00125|connection refused; invalid presentation|
+ORA-00126|connection refused; invalid duplicity|
+ORA-00127|dispatcher string does not exist|
+ORA-00128|this command requires a dispatcher name|
+ORA-00129|listener address validation failed 'string'|
+ORA-00130|invalid listener address 'listener_address'|
+ORA-00131|network protocol does not support registration 'string'|
+ORA-00132|syntax error or unresolved network name 'string'|
+ORA-00133|The value of string is too long.|
+ORA-00134|invalid DISPATCHERS specification #string|
+ORA-00135|missing attribute string|
+ORA-00136|invalid LISTENER_NETWORKS specification #string|
+ORA-00137|invalid LISTENER_NETWORKS specification for NAME 'network_name'|
+ORA-00138|all addresses specified for attribute string are invalid|
+ORA-00139|duplicate attribute string|
+ORA-00140|LISTENER_NETWORKS specification with NAME=string not allowed|
+ORA-00141|Addresses or aliases specified for parameter parameter_name are invalid.|
+ORA-00142|FORWARD_LISTENER and LOCAL_LISTENER are on the same network.|
+ORA-00143|The registration of a remote port is not supported without the registration of a local port.|
+ORA-00144|LREG control event|
+ORA-00145|non-root container listener modification disallowed due to SERVICE_SCOPE configuration for LISTENER_NETWORKS|
+ORA-00146|invalid SERVICE_SCOPE value string for LISTENER_NETWORKS string|
+ORA-00147|connection refused; shared servers are disabled|
+ORA-00148|no dispatcher available to handle outbound connection|
+ORA-00149|no compatible dispatcher found for the PROTOCOL|
+ORA-00150|duplicate transaction ID|
+ORA-00151|invalid transaction ID|
+ORA-00152|current session does not match requested session|
+ORA-00153|internal error in XA library|
+ORA-00154|protocol error in transaction monitor|
+ORA-00155|cannot perform work outside of global transaction|
+ORA-00160|global transaction length string is illegal (maximum allowed string)|
+ORA-00161|transaction branch length string is illegal (maximum allowed string)|
+ORA-00162|external dbid length string is greater than maximum (string)|
+ORA-00163|internal database name length string is greater than maximum (string)|
+ORA-00164|distributed autonomous transaction disallowed within migratable distributed transaction|
+ORA-00165|migratable distributed autonomous transaction with remote operation is not allowed|
+ORA-00166|remote/local nesting level is too deep|
+ORA-00200|control file could not be created|
+ORA-00201|control file version string incompatible with ORACLE version string|
+ORA-00202|control file: 'string'|
+ORA-00203|using the wrong control files|
+ORA-00204|error in reading (block string, # blocks string) of control file|
+ORA-00816|Error message translation failed.|
+ORA-00820|Specified value of sga_max_size is too small, needs to be at least stringM|
+ORA-00821|Specified value of sga_target stringM is too small, needs to be at least stringM|
+ORA-00822|MMAN process terminated with error|
+ORA-00823|Specified value of sga_target greater than sga_max_size|
+ORA-00824|cannot set SGA_TARGET or MEMORY_TARGET due to existing internal settings|
+ORA-00825|cannot set DB_BLOCK_BUFFERS if SGA_TARGET or MEMORY_TARGET is set|
+ORA-00826|cannot set SGA_TARGET or MEMORY_TARGET for an ASM instance|
+ORA-00827|could not shrink sga_target to specified value|
+ORA-00828|specified value of shared_pool_reserved_size inconsistent with internal settings|
+ORA-00830|cannot set statistics_level to BASIC with auto-tune SGA enabled|
+ORA-00832|no streams pool created and cannot automatically create one|
+ORA-00837|Specified value of MEMORY_TARGET greater than MEMORY_MAX_TARGET|
+ORA-00838|Specified value of MEMORY_TARGET is too small, needs to be at least stringM|
+ORA-00839|SGA_TARGET cannot be modified to the specified value|
+ORA-00840|PGA_AGGREGATE_TARGET cannot be modified to the specified value|
+ORA-00841|MEMORY_TARGET not supported on this system|
+ORA-00842|DB_BLOCK_BUFFERS cannot be set with SGA_TARGET or MEMORY_TARGET|
+ORA-00843|Parameter not taking MEMORY_MAX_TARGET into account|
+ORA-00844|Parameter not taking MEMORY_TARGET into account|
+ORA-00845|The Automatic Memory Management (AMM) feature encountered a problem allocating memory.|
+ORA-00846|could not shrink MEMORY_TARGET to specified value|
+ORA-00847|MEMORY_TARGET/MEMORY_MAX_TARGET and LOCK_SGA cannot be set together|
+ORA-00848|STATISTICS_LEVEL cannot be set to BASIC with SGA_TARGET or MEMORY_TARGET|
+ORA-00849|SGA_TARGET string cannot be set to more than MEMORY_MAX_TARGET string.|
+ORA-00850|PGA_AGGREGATE_TARGET string cannot be set to more than MEMORY_MAX_TARGET string.|
+ORA-00851|SGA_MAX_SIZE string cannot be set to more than MEMORY_TARGET string.|
+ORA-00852|Rolling migration monitor (RMON) process terminated.|
+ORA-00853|SGA_MAX_SIZE string cannot be set to more than MEMORY_MAX_TARGET string.|
+ORA-00854|Oracle ASM IOServer (IOS) instance fence monitor process (FENC) terminated.|
+ORA-00855|PGA_AGGREGATE_TARGET cannot be set because of insufficient physical memory.|
+ORA-00856|PGA_AGGREGATE_TARGET cannot be set higher 50 percent of PGA_AGGREGATE_LIMIT.|
+ORA-00857|SGA_TARGET increase not a multiple of SGA file size in hugetlbfs (per-granule) setup|
+ORA-00858|Processes remain attached to system global area (SGA) after shutdown|
+ORA-00865|cannot perform the current operation on the same session|
+ORA-00866|invalid or non-existent SQL ID|
+ORA-00867|invalid instance ID|
+ORA-00875|failed to string the dedicated connection broker|
+ORA-00876|invalid CONNECTION_BROKERS specification #string|
+ORA-00877|TYPE=string appears in multiple CONNECTION_BROKERS specifications|
+ORA-00878|Cannot connect to database. The server type is not supported.|
+ORA-00879|Cannot connect to database. The connection broker is exiting.|
+ORA-00900|invalid SQL statement|
+ORA-00901|invalid CREATE command|
+ORA-00902|invalid datatype|
+ORA-00903|invalid table name|
+ORA-00904|identifier: invalid identifier|
+ORA-00905|missing keyword|
+ORA-00906|missing left parenthesis|
+ORA-00907|missing right parenthesis|
+ORA-01360|invalid token string|
+ORA-01361|global name mismatch|
+ORA-01362|Specified SQL_REDO_UNDO parameter is invalid|
+ORA-01363|Specified COLUMN_NAME parameter is NULL|
+ORA-01364|waiting for branch at SCN string|
+ORA-01365|waiting for new branch registration|
+ORA-01366|failed to find redo logs required for terminal apply|
+ORA-01367|The redo log file name is invalid.|
+ORA-01368|Redo log file header mismatch for thread thread# sequence sequence#.|
+ORA-01369|persistent memory direct commit file not found for recovery|
+ORA-01370|Specified restart SCN string is too old|
+ORA-01371|Complete LogMiner dictionary not found|
+ORA-01372|Insufficient processes for specified LogMiner operation|
+ORA-01373|LogMiner session wait for memory exceeded string seconds|
+ORA-01374|_log_parallelism_max greater than 1 not supported in this release|
+ORA-01375|Corrupt logfile string recovered|
+ORA-01376|cannot add file string due to unsupported redo compatibility setting|
+ORA-01377|Invalid log file block size|
+ORA-01378|The logical block size (string) of file string is not compatible with the disk sector size (media sector size is string and host sector size is string)|
+ORA-01379|LogMiner testing event|
+ORA-01380|Instance string (thread string) has less than two string block size log files|
+ORA-01381|Dropping log string would leave less than two log files with block size string for instance string (thread string)|
+ORA-01382|Thread string failed to open log file string. The log file's block size (string) is larger than the disk sector size (string)|
+ORA-01383|Thread string failed to open string block size log file 'string' on string sector native-mode disks|
+ORA-01384|Cannot add file string due to unsupported redo compatibility string which is earlier than string.|
+ORA-01397|file name too long to shrink without truncation|
+ORA-01398|LogMiner public event|
+ORA-01399|LogMiner public event|
+ORA-01400|cannot insert NULL into (string)|
+ORA-01401|inserted value too large for column|
+ORA-01402|view WITH CHECK OPTION where-clause violation|
+ORA-01403|no data found|
+ORA-01404|ALTER COLUMN will make an index too large|
+ORA-01405|The fetched column returned a NULL value.|
+ORA-01406|fetched column value was truncated|
+ORA-01407|cannot update (string) to NULL|
+ORA-01408|such column list already indexed|
+ORA-01409|NOSORT option may not be used; rows are not in ascending order|
+ORA-01410|The ROWID is invalid.|
+ORA-01411|cannot store the length of column in the indicator|
+ORA-01412|zero length not allowed for this datatype|
+ORA-01413|invalid value|
+ORA-01414|invalid array length when trying to bind array|
+ORA-01415|Query contains too many distinct aggregate functions.|
+ORA-01416|two tables cannot be outer-joined to each other|
+ORA-01417|a table may be outer joined to at most one other table|
+ORA-01418|specified index does not exist|
+ORA-01419|datdts: illegal format code|
+ORA-01420|datstd: illegal format code|
+ORA-01421|datrnd/dattrn: illegal precision specifier|
+ORA-12224|TNS:no listener|
+ORA-12225|TNS:destination host unreachable|
+ORA-12226|TNS:operating system resource quota exceeded|
+ORA-12227|TNS:syntax error|
+ORA-12228|TNS:protocol adapter not loadable|
+ORA-12229|TNS:Interchange has no more free connections|
+ORA-12230|TNS:Severe Network error occurred in making this connection|
+ORA-12231|TNS:No connection possible to destination|
+ORA-12232|TNS:No path available to destination|
+ORA-12233|TNS:Failure to accept a connection|
+ORA-12234|TNS:Redirect to destination|
+ORA-12235|TNS:Failure to redirect to destination|
+ORA-12236|TNS:protocol support not loaded|
+ORA-12238|TNS: NT Operaion is aborted|
+ORA-12241|Windows service string is either not available or not running|
+ORA-12261|Cannot connect to database. Syntax error in Easy Connect connection string string|
+ORA-12262|Cannot connect to database. Could not resolve hostname string in Easy Connect connection string string|
+ORA-12263|Failed to resolve the connect descriptor. (string).|
+ORA-12265|Database server refused connection. (Cause: ORA-string) (CONNECTION_ID=string)|
+ORA-12268|server uses weak encryption/crypto-checksumming version|
+ORA-12269|client uses weak encryption/crypto-checksumming version|
+ORA-12270|Client NOT using TCPS protocol to connect to server|
+ORA-12315|database link type is invalid for the ALTER DATABASE statement|
+ORA-12316|syntax error in database link's connect string|
+ORA-12317|logon to database (link name string) denied|
+ORA-12318|database (link name string) is already mounted|
+ORA-12319|database (link name string) is already open|
+ORA-12321|database (link name string) is not open and AUTO_MOUNTING=FALSE|
+ORA-12322|unable to mount database (link name string)|
+ORA-12323|unable to open database (link name string)|
+ORA-12324|cannot use the ROM: link type on a private database link|
+ORA-12326|database string is closing immediately; no operations are permitted|
+ORA-12329|database string is closed; no operations are permitted|
+ORA-12333|database (link name string) is not mounted|
+ORA-12334|database (link name string) is still open|
+ORA-12335|database (link name string) is not open|
+ORA-12336|cannot login to database (link name string)|
+ORA-12341|maximum number of open mounts exceeded|
+ORA-12342|open mounts exceeds limit set on the OPEN_MOUNTS parameter|
+ORA-12345|user string lacks CREATE SESSION privilege in database link (linkname string)|
+ORA-12350|database link being dropped is still mounted|
+ORA-12351|cannot create view using a remote object which has a remote object reference|
+ORA-12352|object string.string@string is invalid|
+ORA-12353|secondary stored object cannot reference remote object|
+ORA-12354|secondary object being dropped|
+ORA-12400|invalid argument to facility error handling|
+ORA-12401|invalid label string: string|
+ORA-12402|invalid format string: string|
+ORA-12403|invalid internal label|
+ORA-12404|invalid privilege string: string|
+ORA-22978|only simple attribute name is allowed in the WITH OBJECT OID clause|
+ORA-22979|cannot INSERT object view REF or user-defined REF|
+ORA-22980|must specify a set of attributes for the WITH OBJECT OID clause|
+ORA-22981|sub-view should be on a table or view with system generated OID|
+ORA-22982|cannot create sub-view under this view|
+ORA-22983|not a user-defined REF|
+ORA-22984|view query for a sub-view cannot contain references to its super view|
+ORA-22985|Invalid second argument to MAKE_REF. Expected value is a 16 byte OID.|
+ORA-22990|LOB locators cannot span transactions.|
+ORA-22991|insufficient space allocated for argument string|
+ORA-22992|cannot use LOB locators from remote table|
+ORA-22993|specified input amount is greater than actual source amount|
+ORA-22994|source offset is beyond the end of the source LOB|
+ORA-22995|TABLESPACE DEFAULT option is invalid in this context|
+ORA-22996|NEXT extent size is smaller than LOB chunksize|
+ORA-22997|VARRAY | OPAQUE stored as LOB is not specified at the table level|
+ORA-22998|CLOB or NCLOB in multibyte character set not supported|
+ORA-22999|CLOB or NCLOB data may have been corrupted|
+ORA-23290|This operation may not be combined with any other operation|
+ORA-23291|Only base table columns may be renamed|
+ORA-23292|The constraint does not exist|
+ORA-23293|Cannot rename a column which is part of a join index|
+ORA-23300|string|
+ORA-23301|mixed use of deferred rpc destination modes|
+ORA-23302|application raised communication failure during deferred RPC|
+ORA-23303|application raised generic exception during deferred RPC|
+ORA-23304|malformed deferred rpc at arg string of string in call string, in tid string|
+ORA-23305|internal deferred RPC error: string|
+ORA-23306|schema string does not exist|
+ORA-23307|replicated schema string already exists|
+ORA-23308|object string.string does not exist or is invalid|
+ORA-23309|object string.string of type string exists|
+ORA-23310|object group "string"."string" is not quiesced|
+ORA-23312|not the masterdef according to string|
+ORA-23313|object group "string"."string" is not mastered at string|
+ORA-23314|database is not a materialized view site for "string"."string"|
+ORA-23315|repcatlog version or request string is not supported by version string|
+ORA-23316|the masterdef is string|
+ORA-23317|a communication failure has occurred|
+ORA-23318|a ddl failure has occurred|
+ORA-23319|parameter value string is not appropriate|
+ORA-23320|the request failed because of values string and string|
+ORA-23321|Pipename may not be null|
+ORA-23322|Privilege error accessing pipe|
+ORA-23323|parameter length exceeds deferred RPC limits|
+ORA-23324|error string, while creating deferror entry at "string" with error string|
+ORA-23325|parameter type is not string|
+ORA-23326|object group "string"."string" is quiesced|
+ORA-23327|imported deferred rpc data does not match string of importing db|
+ORA-23328|mview base table "string"."string" differs from master table "string"."string"|
+ORA-62782|Error getting 'partition' count for 'topic' %0!s from the Kafka cluster. Check the status of the Kafka cluster: %1!s.|
+ORA-62783|Error getting 'partition' count for 'topic' %0!s from the Kafka cluster. Check that the topic exists in the Kafka cluster %1!s.|
+ORA-62784|An attempt to manually rollback a change to an external table [%0!s] failed.|
+ORA-62785|An attempt to manually rollback an unknown type [%0!s] was made.|
+ORA-62786|The specified object name [%0!s] could not be parsed into SQL object tokens.|
+ORA-62787|The specified object name [%0!s] parsed into more tokens than expected. Expected name is either an object name or a schema-qualified object name.|
+ORA-62788|The directory [%0!s] either does not exist or does not have read/write privileges granted to the user.|
+ORA-62789|The user cannot have EXECUTE access to the directory [%0!s].|
+ORA-62790|The OSAK view [%0!s] does not exist.|
+ORA-62791|The OSAK temporary table [%0!s] does not exist.|
+ORA-62792|The Avro name is NULL.|
+ORA-62793|The Avro name starts with an invalid character. The specified value is [%0!s].|
+ORA-62794|The Avro name contains an invalid character. The specified value is [%0!s].|
+ORA-62795|The Avro type [%0!s] already exists and cannot be redefined.|
+ORA-62796|The Avro %0!s %1!s is NULL.|
+ORA-62797|The attribute [%0!s] is not present in schema [%1!s].|
+ORA-62798|The attribute [%0!s] is not a string in the schema [%1!s].|
+ORA-62799|The attribute [%0!s] is not an integer in the schema [%1!s].|
+ORA-62800|The attribute 'aliases' is not an array in the schema [%0!s].|
+ORA-62801|The attribute array element 'aliases[%0!s]' is not a string in the schema [%1!s].|
+ORA-62802|Schema name [%0!s] cannot be a primitive name in the schema [%1!s].|
+ORA-62803|A fixed type size must be between 0 and 2147483647 in the schema [%0!s].|
+ORA-62804|The 'symbols' attribute is missing for the enum in the schema [%0!s].|
+ORA-62805|The 'symbols' attribute is not an array for the enum in the schema [%0!s].|
+ORA-62806|The element [%0!s] in the enum 'symbols' attribute array is not a string in the schema [%1!s].|
+ORA-62807|The element [%0!s] in the enum 'symbols' attribute array is a duplicate in the schema [%1!s].|
+ORA-62808|The default value [%0!s] is not in the array [%1!s] for the enum 'symbols' attribute in the schema [%2!s].|
+ORA-62809|The type [%0!s] is not defined in the schema [%1!s].|
+ORA-62810|An illegal value for 'order' [%0!s] is specified for the field [%1!s].|
+ORA-62811|The record has an empty or missing 'fields' array [%0!s].|
+ORA-62812|The element [%0!s] in the 'fields' array for the record is not an object [%1!s].|
+ORA-62813|Union [%0!s] is not allowed to be nested within union [%1!s].|
+ORA-62814|A duplicate type [%0!s] is present within union [%1!s].|
+ORA-62815|The Avro schema is NULL.|
+ORA-62816|Undefined name [%0!s] in the current type map.|
+ORA-62817|The 'items' attribute is not defined for the array [%0!s].|
+ORA-62818|The 'values' attribute is not defined for the map [%0!s].|
+ORA-62819|The type [%0!s] is not supported in the current type map.|
+ORA-62820|Schema [%0!s] is not supported.|
+ORA-62821|Schema type [%0!s] is not supported.|
+ORA-62822|Avro schema is not a JSON object. Schema is [%0!s].|
+ORA-62823|Avro schema is not a 'record' type. Schema is [%0!s].|
+ORA-62824|The maximum allowed number of 'fields' in an Avro record is %1!s. The number of 'fields' is %0!s.|
+ORA-62825|The 'field' name [%0!s] exceeds the maximum column name length [%1!s] in the schema [%2!s].|
+ORA-62826|The 'field' [%0!s] maps to the same column name as field [%1!s] in the schema [%2!s].|
+ORA-62827|failed to ALTER TABLE %0!s while updating the access parameters.|
+
+DATA CHARACTERISTICS
+====================
+
+Error Code Ranges:
+- 00000-00999: Initial system errors (sessions, processes, licensing)
+- 01000-01999: SQL, transaction, and redo log related errors
+- 12000-12999: Network and TNS related errors
+- 22000-22999: Object and LOB related errors
+- 23000-23999: Replication and distributed transaction errors
+- 62000-62999: Recent/specialized errors (Avro, Kafka, etc.)
+
+OBSERVATIONS
+============
+1. Early error codes (00000-00999) primarily cover:
+   - Session management
+   - Process and resource limits
+   - Memory allocation
+   - Network connectivity
+
+2. Mid-range codes (01000-01999) cover:
+   - SQL syntax and compilation
+   - Data constraints and integrity
+   - Transaction and redo log issues
+   - Database file operations
+
+3. High-range codes (12000+) cover:
+   - Network and TNS issues (12000-12999)
+   - Advanced features (22000+)
+   - Recently added functionality (62000+)
+
+4. Error descriptions contain:
+   - Placeholder text (indicated by 'string' or %0!s)
+   - HTML entities (&#x27; for apostrophe, &quot; for quotes)
+   - Parameter names and explanations
+
+NOTES ON COMPLETE DATA COLLECTION
+==================================
+
+To collect all 25,046 error codes programmatically:
+1. Extract all link URLs from https://docs.oracle.com/en/error-help/db/ora-index.html
+2. Create a queue of URLs to fetch
+3. Implement respectful rate limiting (50-100ms between requests)
+4. Parse page titles to extract error code and description
+5. Store results in pipe-delimited format
+
+Alternative approaches:
+- Use Oracle's official documentation PDF exports (if available)
+- Query Oracle's database documentation API (if public access available)
+- Check if there's a downloadable database of error codes
+
+ESTIMATED COMPLETION TIME FOR FULL DATASET
+===========================================
+- 25,046 requests × 100ms = ~2,504 seconds = 41+ minutes
+- With connection overhead: ~45-60 minutes estimated
+
+This would require sustained network access without interruption.
+
+END OF REPORT

@@ -35,8 +35,40 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Oracle 에러 정보 데이터베이스
-ORACLE_ERRORS = {
+def load_oracle_errors_from_file():
+    """파일에서 Oracle 에러 데이터 로드"""
+    errors = {}
+    file_path = "oracle_errors_full.txt"
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+
+        for line in lines[1:]:  # 헤더 스킵
+            line = line.strip()
+            if not line:
+                continue
+            parts = line.split('|')
+            if len(parts) >= 4:
+                code = parts[0]
+                name = parts[1]
+                cause = parts[2]
+                action = parts[3]
+
+                errors[code] = {
+                    'name': name,
+                    'en_cause': cause,
+                    'ko_cause': cause,
+                    'en_action': action,
+                    'ko_action': action,
+                    'critical': False
+                }
+    except FileNotFoundError:
+        st.warning("oracle_errors_full.txt 파일을 찾을 수 없습니다.")
+
+    return errors
+
+# 기본 Oracle 에러 정보 데이터베이스 (한국어 포함)
+ORACLE_ERRORS_DEFAULT = {
     '01555': {
         'name': 'Snapshot too old',
         'en_cause': 'The rollback segment does not have sufficient undo information to satisfy the current SQL statement.',
@@ -630,6 +662,10 @@ ORACLE_ERRORS = {
         'critical': False
     }
 }
+
+# 기본 데이터로 시작하고 파일에서 로드한 데이터로 병합
+ORACLE_ERRORS = ORACLE_ERRORS_DEFAULT.copy()
+ORACLE_ERRORS.update(load_oracle_errors_from_file())
 
 # DB 버전 선택
 DB_VERSIONS = ['11g', '12c', '18c', '19c', '21c', '23c', '26i']

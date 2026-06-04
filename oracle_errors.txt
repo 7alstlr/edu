@@ -1,0 +1,111 @@
+CODE|NAME|CAUSE|ACTION
+00000|normal, successful completion|Operation completed successfully.|No action needed. This is a successful completion message.
+00001|unique constraint violated|An attempt was made to insert or update a duplicate value in a column that has a unique constraint.|Check the constraint definition and ensure unique values are being inserted. Remove duplicates if necessary.
+00016|Unable to set more than string sessions for developer's instance|The number of requested sessions exceeds the maximum allowed for developer instances.|Reduce the number of sessions or upgrade to a standard instance.
+00017|session requested to set trace event|Session trace event has been set.|Check if tracing is needed. Disable trace if it's affecting performance.
+00018|maximum number of sessions exceeded|The number of connected sessions exceeds the SESSIONS parameter.|Increase the SESSIONS parameter or reduce the number of concurrent sessions.
+00019|maximum number of session licenses exceeded|The number of active sessions exceeds the licensed limit.|Purchase additional licenses or reduce concurrent sessions.
+00020|exceeded maximum number of processes specified in initialization parameter|The number of processes exceeds the PROCESSES initialization parameter.|Increase the PROCESSES parameter value and restart the database.
+00021|Cannot switch session because that session is being used by other users|Multiple users are trying to use the same session.|Create separate sessions for each user or wait for other users to release the session.
+00022|invalid session ID; access denied|The specified session ID does not exist or access is denied.|Verify the session ID and ensure you have proper privileges to access the session.
+00023|session references process private memory; cannot detach session|The session has references to process-private memory and cannot be detached.|Terminate the session and establish a new one.
+00024|logins from more than one process not allowed in single-process mode|An attempt was made to log in from multiple processes in single-process mode.|Run the database in multi-process mode if multiple process logins are needed.
+00025|SGA memory allocation request of string failed|The System Global Area (SGA) cannot allocate the requested memory.|Increase SGA size or reduce memory-consuming components.
+00026|missing or invalid session ID|The session ID is missing or not valid.|Provide a valid session ID.
+00027|cannot kill current session|An attempt was made to kill the current session.|Connect as a different session to kill the problematic session.
+00028|session has been terminated|The session has been killed or terminated.|Reconnect to the database to establish a new session.
+00029|session is not a user session|The operation is being attempted on a non-user session.|Perform the operation on a valid user session.
+00030|User session ID does not exist|The specified user session ID does not exist.|Verify the session ID and try again.
+00031|session marked for kill|The session has been marked for termination.|Wait for the session to complete current operations and terminate.
+00032|invalid session migration password|The session migration password is invalid or incorrect.|Provide the correct session migration password.
+00033|current session has empty migration password|The current session has no migration password set.|Set a migration password for the session if needed.
+00034|cannot string in current PL/SQL session|The operation cannot be performed in the current PL/SQL session.|Complete the current PL/SQL operation or exit the session.
+00035|LICENSE_MAX_USERS cannot be less than current number of users|The new LICENSE_MAX_USERS value is less than the current number of users.|Increase the LICENSE_MAX_USERS value or reduce the number of users.
+00036|maximum number of recursive SQL levels exceeded|The recursive SQL depth exceeds the limit.|Reduce the recursion depth or increase the initialization parameter.
+00037|cannot switch to a session belonging to a different server group|An attempt was made to switch to a session in a different server group.|Switch to a session in the current server group.
+00038|Cannot create session: server group belongs to another user|The server group is owned by another user.|Use a server group that is available to your user account.
+00039|error during periodic action|An error occurred while executing a periodic action.|Check the alert log for details and correct the underlying issue.
+00040|active time limit exceeded - call aborted|The active time limit for the operation has been exceeded.|Optimize the operation or increase the time limit if allowed.
+00041|active time limit exceeded - session terminated|The session exceeded its active time limit and was terminated.|Reconnect and optimize operations to complete within the time limit.
+00042|Unknown Service name string|The specified service name is not registered in the listener.|Check the service name and ensure it is properly registered with the listener.
+00043|remote operation failed|A remote operation encountered an error.|Check the remote database status and network connectivity.
+00044|timed_statistics parameter must be TRUE when statistics_level parameter is not BASIC|The timed_statistics parameter is not set to TRUE when statistics_level is not BASIC.|Set timed_statistics=TRUE in the initialization parameters.
+00045|Your session has been terminated with no replay|The session was terminated and cannot be replayed.|Reconnect to the database and resubmit your work.
+00046|cannot modify sessions parameter|The SESSIONS parameter cannot be modified in the current configuration.|Restart the database after changing the SESSIONS parameter.
+00047|cannot set sessions parameter to this value|The specified value for SESSIONS parameter is invalid.|Use a valid value for the SESSIONS parameter.
+00049|maximum number of DB_FILES exceeded for the PDB|The number of data files exceeds the DB_FILES parameter.|Increase the DB_FILES parameter and restart the database.
+00050|Operating system error occurred while obtaining an enqueue|The operating system returned an error while acquiring an enqueue.|Check operating system error messages and system resources.
+00051|timeout occurred while waiting for a resource|A resource acquisition request timed out.|Reduce load on the system or increase the timeout value.
+00052|maximum number of enqueue resources exceeded|The number of enqueue resources exceeds the configured limit.|Increase the enqueue resources parameter or reduce lock contention.
+00053|maximum number of enqueues exceeded|The total number of enqueues has exceeded the limit.|Increase the enqueue limit or optimize lock usage in applications.
+00054|resource busy and acquire with NOWAIT specified or timeout occurred|A resource is locked by another session.|Wait for the other session to release the lock or kill the blocking session.
+00055|maximum number of DML locks exceeded|The number of DML locks exceeds the DML_LOCKS parameter.|Increase the DML_LOCKS parameter and restart the database.
+00056|DDL lock on object is already held in an incompatible mode|Another session holds a DDL lock on the object in an incompatible mode.|Wait for the other session to release the lock or kill the blocking session.
+00057|maximum number of temporary table locks exceeded|The number of temporary table locks exceeds the limit.|Reduce the number of temporary tables or optimize usage.
+00058|DB_BLOCK_SIZE must be string to mount this database|The DB_BLOCK_SIZE parameter does not match the database block size.|Set DB_BLOCK_SIZE to the correct value and restart the database.
+00059|maximum number of DB_FILES exceeded|The number of data files exceeds the DB_FILES parameter.|Increase the DB_FILES parameter and restart the database.
+00060|deadlock detected while waiting for resource|A circular lock dependency was detected between sessions.|Identify and eliminate the circular lock dependency. Optimize transaction design.
+00061|another instance has a different DML_LOCKS setting|DML_LOCKS parameter differs between database instances.|Set the same DML_LOCKS value on all instances.
+00062|DML full-table lock cannot be acquired; DML_LOCKS is 0|DML_LOCKS is set to 0, preventing full-table locks.|Increase the DML_LOCKS parameter if full-table locks are needed.
+00063|maximum number of log files exceeded string|The number of log files exceeds the configured maximum.|Archive log files or increase the maximum log file limit.
+00064|object is too large to allocate on this O/S|The object size exceeds the operating system's allocation limit.|Reduce object size or upgrade the operating system.
+01000|Maximum open cursors exceeded|The number of open cursors exceeds the OPEN_CURSORS parameter.|Close unused cursors or increase the OPEN_CURSORS parameter.
+01012|Not logged on|No database connection has been established.|Establish a connection to the database.
+01017|invalid username/password; logon denied|The username or password provided is incorrect.|Verify the username and password and try again.
+01031|insufficient privileges|The user lacks the necessary privileges to perform the operation.|Grant the required privileges to the user or contact the DBA.
+01033|ORACLE initialization or shutdown in progress|The database is initializing or shutting down.|Wait for the database to complete initialization or shutdown.
+01034|ORACLE not available|The database instance is not available or not started.|Start the database instance and verify it is running.
+01041|internal error - hostdef extension missing|Required host definition extension is missing.|Reinstall Oracle client software.
+01043|user side memory corruption|Memory corruption detected on the user side.|Restart the application and check system memory.
+01051|ORACLE procedure tables corrupted|Oracle procedure tables are corrupted.|Restore from backup or contact Oracle Support.
+01075|you are not connected to ORACLE|No active connection to the database exists.|Establish a connection to the database.
+01109|database not open|The database is not open or mounted properly.|Open the database using ALTER DATABASE OPEN.
+01110|data file not open|A data file is offline or cannot be opened.|Bring the data file online or recover it.
+01401|inserted value too large for column|The value being inserted exceeds the column size.|Increase the column size or reduce the value length.
+01403|no data found|A SELECT INTO statement returned no rows.|Check the query conditions or use exception handling.
+01405|The fetched column returned a NULL value|A fetched column value is NULL.|Handle NULL values using NVL or check the source data.
+01406|fetched column value was truncated|A column value was truncated during fetch.|Increase the buffer size or use a larger data type.
+01407|cannot update (string) to NULL|An attempt was made to set a NOT NULL column to NULL.|Provide a non-NULL value or remove the NOT NULL constraint.
+01422|exact fetch returns more than requested rows|A SELECT INTO returned more than one row.|Use a cursor or BULK COLLECT for multiple rows.
+01438|value larger than specified precision|A numeric value exceeds the column precision.|Increase the column precision or reduce the value.
+01445|cannot select ROWID from view|ROWID cannot be selected from a view without a base table.|Select from the base table or use a different identifier.
+01489|result of string concatenation is too long|String concatenation result exceeds the maximum length.|Use CLOB or split the concatenation.
+01552|non-system tablespace contains data from multiple databases|A tablespace has data from multiple databases.|Restore the datafile from the correct database backup.
+01553|unable to create INITIAL extent for cluster|Cannot create initial extent for a cluster.|Increase tablespace size or remove fragmentation.
+01554|unable to create NEXT extent for cluster|Cannot create next extent for a cluster.|Add more space to the tablespace.
+01555|snapshot too old|Undo information for a read is no longer available in the undo tablespace.|Increase undo retention period or use larger undo tablespace.
+01562|UNDO tablespace cannot be read only|An attempt was made to make the UNDO tablespace read-only.|Keep UNDO tablespace in read-write mode.
+01578|ORACLE data block corrupted|Data block corruption detected in the database.|Run DBVERIFY and restore from backup if necessary.
+01650|unable to extend tablespace string|Insufficient space to extend the tablespace.|Add a new datafile or extend existing datafiles.
+01658|unable to create INITIAL extent for segment|Insufficient space for initial segment extent.|Free up space or increase tablespace size.
+01722|invalid number|A character string is not a valid number.|Check the data format and use TO_NUMBER with error handling.
+01745|invalid base type for REF type|Invalid base type specified for REF type.|Use a valid object type for the REF.
+01747|invalid user.table.column, table.column, or column specification|Invalid table or column name.|Verify the table and column names exist.
+01748|only simple column names allowed here|Complex expressions are not allowed in this context.|Use simple column names only.
+01752|cannot delete from view without key-preserved table|View deletion requires a key-preserved table.|Use an INSTEAD OF trigger or delete from base table.
+01760|illegal argument for function|Invalid argument passed to a function.|Check the function documentation and provide valid arguments.
+01776|cannot modify more than one base table through a view|View modification affects multiple base tables.|Use INSTEAD OF trigger or modify base tables directly.
+01789|query block has incorrect number of result columns|UNION queries have different column counts.|Ensure all SELECT statements have the same number of columns.
+01830|date format picture ends before converting entire input string|Date format does not match input string length.|Check and correct the date format string.
+01839|date not valid for month specified|Invalid date for the specified month.|Verify the date is valid for the month.
+02000|no rows selected|A SELECT statement returned no rows.|Check the query conditions or verify data exists.
+02014|cannot select FOR UPDATE from view|FOR UPDATE cannot be used with multi-table views.|Remove FOR UPDATE or query the base table.
+02290|check constraint violated|A CHECK constraint was violated.|Modify the data to satisfy the constraint.
+02291|integrity constraint violated - parent key not found|FOREIGN KEY constraint violation - parent record missing.|Insert the parent record first before child records.
+02292|integrity constraint violated - child record found|FOREIGN KEY constraint violation - child records exist.|Delete child records first before deleting parent.
+02449|unique/primary keys in table referenced by foreign keys|Cannot drop table with foreign key references.|Drop dependent tables first or disable constraints.
+04000|invalid ALTER TABLE option|Invalid option used in ALTER TABLE statement.|Check ALTER TABLE syntax and correct the option.
+04031|cannot allocate SGA memory|SGA memory allocation failed.|Increase SGA_TARGET or reduce memory-consuming components.
+04043|object does not exist|Referenced object does not exist.|Verify the object name and schema, create if missing.
+04061|existing state of package has been discarded|Package was invalidated and needs recompilation.|Recompile the package.
+06502|PL/SQL: numeric or value error|Conversion, truncation, or arithmetic error in PL/SQL.|Check variable types and values, use proper conversions.
+06512|PL/SQL: cursor already open|An attempt was made to open an already-open cursor.|Close the cursor before reopening.
+06550|PL/SQL: syntax error|Syntax error found in PL/SQL code.|Check PL/SQL syntax and correct the error.
+12224|TNS:no listener|The TNS listener is not running or cannot be found.|Start the TNS listener.
+12225|TNS:destination host unreachable|The destination host cannot be reached.|Check network connectivity and firewall settings.
+12226|TNS:operating system resource quota exceeded|Operating system resource limit exceeded.|Increase OS resource limits.
+12227|TNS:syntax error|Syntax error in connection string.|Check connection string syntax.
+12228|TNS:protocol adapter not loadable|TNS protocol adapter cannot be loaded.|Reinstall Oracle client or check protocol configuration.
+12514|TNS:listener could not resolve SERVICE_NAME given in connect descriptor|Listener does not know the specified service name.|Check listener configuration and register the service.
+12545|Connect failed because target host or object does not exist|Cannot connect to specified host.|Verify hostname and network connectivity.
+12704|character set mismatch|Client character set does not match database.|Set NLS_LANG environment variable to match database.

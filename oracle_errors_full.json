@@ -1,0 +1,947 @@
+{
+  "00000": {
+    "name": "normal, successful completion",
+    "cause": "Operation completed successfully.",
+    "action": "No action needed."
+  },
+  "00001": {
+    "name": "unique constraint violated",
+    "cause": "Attempt to insert duplicate value in unique constraint column.",
+    "action": "Check constraint and ensure unique values."
+  },
+  "00016": {
+    "name": "Unable to set more than string sessions for developer instance",
+    "cause": "Session count exceeds developer instance limit.",
+    "action": "Reduce sessions or upgrade instance."
+  },
+  "00017": {
+    "name": "session requested to set trace event",
+    "cause": "Trace event has been set.",
+    "action": "Check if tracing is needed."
+  },
+  "00018": {
+    "name": "maximum number of sessions exceeded",
+    "cause": "Session count exceeds SESSIONS parameter.",
+    "action": "Increase SESSIONS parameter."
+  },
+  "00019": {
+    "name": "maximum number of session licenses exceeded",
+    "cause": "Active sessions exceed licensed limit.",
+    "action": "Purchase additional licenses or reduce sessions."
+  },
+  "00020": {
+    "name": "exceeded maximum number of processes in initialization parameter",
+    "cause": "Process count exceeds PROCESSES parameter.",
+    "action": "Increase PROCESSES parameter."
+  },
+  "00021": {
+    "name": "Cannot switch session - in use by other users",
+    "cause": "Multiple users using same session.",
+    "action": "Create separate sessions for each user."
+  },
+  "00022": {
+    "name": "invalid session ID; access denied",
+    "cause": "Session ID invalid or access denied.",
+    "action": "Verify session ID and privileges."
+  },
+  "00023": {
+    "name": "session references process private memory; cannot detach",
+    "cause": "Session has process-private memory references.",
+    "action": "Terminate session and establish new one."
+  },
+  "00024": {
+    "name": "logins from more than one process not allowed in single-process mode",
+    "cause": "Multiple process logins in single-process mode.",
+    "action": "Use multi-process mode."
+  },
+  "00025": {
+    "name": "SGA memory allocation request failed",
+    "cause": "SGA cannot allocate requested memory.",
+    "action": "Increase SGA_TARGET."
+  },
+  "00026": {
+    "name": "missing or invalid session ID",
+    "cause": "Session ID missing or invalid.",
+    "action": "Provide valid session ID."
+  },
+  "00027": {
+    "name": "cannot kill current session",
+    "cause": "Attempt to kill current session.",
+    "action": "Use different session to kill."
+  },
+  "00028": {
+    "name": "session has been terminated",
+    "cause": "Session killed or terminated.",
+    "action": "Reconnect to database."
+  },
+  "00029": {
+    "name": "session is not a user session",
+    "cause": "Operation on non-user session.",
+    "action": "Perform on valid user session."
+  },
+  "00030": {
+    "name": "User session ID does not exist",
+    "cause": "Specified user session does not exist.",
+    "action": "Verify session ID."
+  },
+  "00031": {
+    "name": "session marked for kill",
+    "cause": "Session marked for termination.",
+    "action": "Wait for session to terminate."
+  },
+  "00032": {
+    "name": "invalid session migration password",
+    "cause": "Migration password invalid.",
+    "action": "Provide correct migration password."
+  },
+  "00033": {
+    "name": "current session has empty migration password",
+    "cause": "No migration password set.",
+    "action": "Set migration password if needed."
+  },
+  "00034": {
+    "name": "cannot string in current PL/SQL session",
+    "cause": "Operation cannot be performed in PL/SQL session.",
+    "action": "Complete PL/SQL operation or exit."
+  },
+  "00035": {
+    "name": "LICENSE_MAX_USERS less than current users",
+    "cause": "New LICENSE_MAX_USERS less than current users.",
+    "action": "Increase LICENSE_MAX_USERS value."
+  },
+  "00036": {
+    "name": "maximum number of recursive SQL levels exceeded",
+    "cause": "Recursive SQL depth exceeds limit.",
+    "action": "Reduce recursion depth."
+  },
+  "00037": {
+    "name": "cannot switch to session in different server group",
+    "cause": "Session in different server group.",
+    "action": "Switch to session in current group."
+  },
+  "00038": {
+    "name": "Cannot create session: server group belongs to another user",
+    "cause": "Server group owned by another user.",
+    "action": "Use available server group."
+  },
+  "00039": {
+    "name": "error during periodic action",
+    "cause": "Error during periodic action execution.",
+    "action": "Check alert log and correct issue."
+  },
+  "00040": {
+    "name": "active time limit exceeded - call aborted",
+    "cause": "Active time limit exceeded.",
+    "action": "Optimize operation or increase time limit."
+  },
+  "00041": {
+    "name": "active time limit exceeded - session terminated",
+    "cause": "Session exceeded active time limit.",
+    "action": "Reconnect and optimize operations."
+  },
+  "00042": {
+    "name": "Unknown Service name string",
+    "cause": "Service name not registered in listener.",
+    "action": "Register service with listener."
+  },
+  "00043": {
+    "name": "remote operation failed",
+    "cause": "Remote operation error.",
+    "action": "Check remote database and network."
+  },
+  "00044": {
+    "name": "timed_statistics must be TRUE when statistics_level not BASIC",
+    "cause": "Parameter mismatch.",
+    "action": "Set timed_statistics=TRUE."
+  },
+  "00045": {
+    "name": "session terminated with no replay",
+    "cause": "Session terminated without replay capability.",
+    "action": "Reconnect and resubmit work."
+  },
+  "00046": {
+    "name": "cannot modify sessions parameter",
+    "cause": "SESSIONS parameter cannot be modified.",
+    "action": "Restart database after change."
+  },
+  "00047": {
+    "name": "cannot set sessions parameter to this value",
+    "cause": "Invalid SESSIONS parameter value.",
+    "action": "Use valid parameter value."
+  },
+  "00049": {
+    "name": "maximum number of DB_FILES exceeded for PDB",
+    "cause": "Data files exceed DB_FILES parameter.",
+    "action": "Increase DB_FILES parameter."
+  },
+  "00050": {
+    "name": "OS error while obtaining enqueue",
+    "cause": "Operating system enqueue error.",
+    "action": "Check OS messages and resources."
+  },
+  "00051": {
+    "name": "timeout occurred while waiting for resource",
+    "cause": "Resource acquisition timeout.",
+    "action": "Reduce load or increase timeout."
+  },
+  "00052": {
+    "name": "maximum number of enqueue resources exceeded",
+    "cause": "Enqueue resources exceed limit.",
+    "action": "Increase enqueue resources."
+  },
+  "00053": {
+    "name": "maximum number of enqueues exceeded",
+    "cause": "Total enqueues exceed limit.",
+    "action": "Increase enqueue limit."
+  },
+  "00054": {
+    "name": "resource busy and acquire with NOWAIT specified",
+    "cause": "Resource locked by another session.",
+    "action": "Wait for lock release."
+  },
+  "00055": {
+    "name": "maximum number of DML locks exceeded",
+    "cause": "DML locks exceed DML_LOCKS parameter.",
+    "action": "Increase DML_LOCKS."
+  },
+  "00056": {
+    "name": "DDL lock on object held in incompatible mode",
+    "cause": "DDL lock incompatibility.",
+    "action": "Wait for lock release."
+  },
+  "00057": {
+    "name": "maximum number of temporary table locks exceeded",
+    "cause": "Temporary table locks exceed limit.",
+    "action": "Reduce temporary tables."
+  },
+  "00058": {
+    "name": "DB_BLOCK_SIZE must be string to mount database",
+    "cause": "DB_BLOCK_SIZE mismatch.",
+    "action": "Set correct DB_BLOCK_SIZE."
+  },
+  "00059": {
+    "name": "maximum number of DB_FILES exceeded",
+    "cause": "Data files exceed DB_FILES.",
+    "action": "Increase DB_FILES."
+  },
+  "00060": {
+    "name": "deadlock detected while waiting for resource",
+    "cause": "Circular lock dependency.",
+    "action": "Eliminate circular locks."
+  },
+  "00061": {
+    "name": "another instance has different DML_LOCKS setting",
+    "cause": "DML_LOCKS parameter differs between instances.",
+    "action": "Set same DML_LOCKS on all instances."
+  },
+  "00062": {
+    "name": "DML full-table lock cannot be acquired; DML_LOCKS is 0",
+    "cause": "DML_LOCKS set to 0.",
+    "action": "Increase DML_LOCKS."
+  },
+  "00063": {
+    "name": "maximum number of log files exceeded string",
+    "cause": "Log files exceed limit.",
+    "action": "Archive logs or increase limit."
+  },
+  "00064": {
+    "name": "object too large to allocate on OS",
+    "cause": "Object size exceeds OS limit.",
+    "action": "Reduce size or upgrade OS."
+  },
+  "00100": {
+    "name": "invalid ALTER TABLE option",
+    "cause": "Invalid option in ALTER TABLE.",
+    "action": "Check syntax."
+  },
+  "00200": {
+    "name": "control file could not be created",
+    "cause": "Cannot create control file.",
+    "action": "Check permissions and path."
+  },
+  "00201": {
+    "name": "control file version incompatible",
+    "cause": "Control file version mismatch.",
+    "action": "Recover database."
+  },
+  "00202": {
+    "name": "control file: 'string'",
+    "cause": "Control file error.",
+    "action": "Check control file."
+  },
+  "00203": {
+    "name": "using wrong control files",
+    "cause": "Wrong control files in use.",
+    "action": "Check control file paths."
+  },
+  "00204": {
+    "name": "error in reading control file block",
+    "cause": "Cannot read control file block.",
+    "action": "Recover control file."
+  },
+  "00205": {
+    "name": "unable to create control file",
+    "cause": "Cannot create control file.",
+    "action": "Check disk space and permissions."
+  },
+  "00206": {
+    "name": "could not open file; I/O error",
+    "cause": "I/O error on file open.",
+    "action": "Check file and OS."
+  },
+  "00207": {
+    "name": "file not found",
+    "cause": "File does not exist.",
+    "action": "Create file or correct path."
+  },
+  "00208": {
+    "name": "file header read failed",
+    "cause": "Cannot read file header.",
+    "action": "Check file integrity."
+  },
+  "00209": {
+    "name": "file read error",
+    "cause": "Error reading file.",
+    "action": "Check file integrity and I/O."
+  },
+  "00210": {
+    "name": "cannot open file",
+    "cause": "Cannot open file.",
+    "action": "Check permissions and path."
+  },
+  "00211": {
+    "name": "no more threads can be spawned",
+    "cause": "Thread creation failed.",
+    "action": "Check system resources."
+  },
+  "00212": {
+    "name": "I/O error during writes",
+    "cause": "Write I/O error.",
+    "action": "Check disk and I/O subsystem."
+  },
+  "00213": {
+    "name": "cannot write to file",
+    "cause": "Cannot write to file.",
+    "action": "Check permissions and disk space."
+  },
+  "00214": {
+    "name": "log write I/O error",
+    "cause": "Log write I/O error.",
+    "action": "Check log files and I/O."
+  },
+  "00215": {
+    "name": "cannot read from file",
+    "cause": "Cannot read file.",
+    "action": "Check file and permissions."
+  },
+  "00216": {
+    "name": "file read error during backup",
+    "cause": "Read error during backup.",
+    "action": "Check file integrity."
+  },
+  "00217": {
+    "name": "session login denied",
+    "cause": "Login denied.",
+    "action": "Check credentials."
+  },
+  "01000": {
+    "name": "maximum open cursors exceeded",
+    "cause": "Open cursors exceed OPEN_CURSORS.",
+    "action": "Close cursors or increase limit."
+  },
+  "01012": {
+    "name": "not logged on",
+    "cause": "No database connection.",
+    "action": "Establish connection."
+  },
+  "01014": {
+    "name": "ORACLE shutdown in progress",
+    "cause": "Database shutting down.",
+    "action": "Wait for shutdown completion."
+  },
+  "01017": {
+    "name": "invalid username/password",
+    "cause": "Wrong credentials.",
+    "action": "Verify username and password."
+  },
+  "01019": {
+    "name": "cannot allocate memory in operating system",
+    "cause": "OS memory allocation failed.",
+    "action": "Check OS memory."
+  },
+  "01031": {
+    "name": "insufficient privileges",
+    "cause": "User lacks required privileges.",
+    "action": "Grant privileges."
+  },
+  "01033": {
+    "name": "ORACLE initialization or shutdown in progress",
+    "cause": "Database initializing/shutting down.",
+    "action": "Wait for completion."
+  },
+  "01034": {
+    "name": "ORACLE not available",
+    "cause": "Database not started.",
+    "action": "Start database."
+  },
+  "01041": {
+    "name": "internal error - hostdef extension missing",
+    "cause": "Missing host definition extension.",
+    "action": "Reinstall client."
+  },
+  "01043": {
+    "name": "user side memory corruption",
+    "cause": "Memory corruption on client.",
+    "action": "Restart application."
+  },
+  "01051": {
+    "name": "ORACLE procedure tables corrupted",
+    "cause": "Procedure tables corrupted.",
+    "action": "Restore from backup."
+  },
+  "01075": {
+    "name": "you are not connected to ORACLE",
+    "cause": "No database connection.",
+    "action": "Connect to database."
+  },
+  "01109": {
+    "name": "database not open",
+    "cause": "Database not open.",
+    "action": "Open database."
+  },
+  "01110": {
+    "name": "data file not open",
+    "cause": "Data file offline.",
+    "action": "Bring file online."
+  },
+  "01403": {
+    "name": "no data found",
+    "cause": "SELECT INTO returns no rows.",
+    "action": "Check query conditions."
+  },
+  "01401": {
+    "name": "inserted value too large for column",
+    "cause": "Value exceeds column size.",
+    "action": "Increase column size."
+  },
+  "01405": {
+    "name": "fetched column returned NULL",
+    "cause": "NULL value fetched.",
+    "action": "Handle NULL values."
+  },
+  "01406": {
+    "name": "fetched column value was truncated",
+    "cause": "Column value truncated.",
+    "action": "Increase buffer size."
+  },
+  "01407": {
+    "name": "cannot update to NULL",
+    "cause": "NOT NULL column set to NULL.",
+    "action": "Provide non-NULL value."
+  },
+  "01420": {
+    "name": "error during implicit type conversion",
+    "cause": "Implicit type conversion error.",
+    "action": "Check data types."
+  },
+  "01422": {
+    "name": "exact fetch returns more than requested rows",
+    "cause": "SELECT INTO returns multiple rows.",
+    "action": "Use cursor for multiple rows."
+  },
+  "01438": {
+    "name": "value larger than specified precision",
+    "cause": "Value exceeds precision.",
+    "action": "Increase precision."
+  },
+  "01445": {
+    "name": "cannot select ROWID from view",
+    "cause": "ROWID in view query.",
+    "action": "Select from base table."
+  },
+  "01476": {
+    "name": "divisor is equal to zero",
+    "cause": "Division by zero.",
+    "action": "Check for zero divisor."
+  },
+  "01489": {
+    "name": "result of string concatenation too long",
+    "cause": "Concatenation exceeds max length.",
+    "action": "Use CLOB."
+  },
+  "01500": {
+    "name": "memory allocation error",
+    "cause": "Memory allocation failed.",
+    "action": "Check system memory."
+  },
+  "01552": {
+    "name": "non-system tablespace contains data from multiple databases",
+    "cause": "Mixed database data.",
+    "action": "Restore correct datafile."
+  },
+  "01553": {
+    "name": "unable to create INITIAL extent for cluster",
+    "cause": "Insufficient space for cluster.",
+    "action": "Increase tablespace size."
+  },
+  "01554": {
+    "name": "unable to create NEXT extent for cluster",
+    "cause": "Insufficient space for extent.",
+    "action": "Add space to tablespace."
+  },
+  "01555": {
+    "name": "snapshot too old",
+    "cause": "Undo information unavailable.",
+    "action": "Increase undo retention."
+  },
+  "01556": {
+    "name": "can only generate 999999999 rows in this tablespace",
+    "cause": "Row generation limit reached.",
+    "action": "Archive data."
+  },
+  "01562": {
+    "name": "UNDO tablespace cannot be read only",
+    "cause": "UNDO in read-only mode.",
+    "action": "Keep UNDO read-write."
+  },
+  "01576": {
+    "name": "tablespace cannot be read only while undo space",
+    "cause": "UNDO in tablespace.",
+    "action": "Remove UNDO first."
+  },
+  "01578": {
+    "name": "ORACLE data block corrupted",
+    "cause": "Data block corruption detected.",
+    "action": "Run DBVERIFY."
+  },
+  "01630": {
+    "name": "max # extents (string) reached in temp segment",
+    "cause": "Temporary segment extent limit.",
+    "action": "Increase extent limit."
+  },
+  "01631": {
+    "name": "max # extents (string) reached in undo segment",
+    "cause": "Undo segment extent limit.",
+    "action": "Increase extent limit."
+  },
+  "01632": {
+    "name": "max # extents (string) reached in segment",
+    "cause": "Segment extent limit reached.",
+    "action": "Increase extent limit."
+  },
+  "01650": {
+    "name": "unable to extend tablespace string",
+    "cause": "Insufficient space to extend.",
+    "action": "Add datafile."
+  },
+  "01658": {
+    "name": "unable to create INITIAL extent for segment",
+    "cause": "Insufficient space for extent.",
+    "action": "Increase tablespace size."
+  },
+  "01659": {
+    "name": "unable to allocate MINEXTENTS beyond string in tablespace",
+    "cause": "Insufficient space for MINEXTENTS.",
+    "action": "Increase tablespace."
+  },
+  "01720": {
+    "name": "grant option does not exist for attribute",
+    "cause": "Grant option not available.",
+    "action": "Grant with ADMIN OPTION."
+  },
+  "01722": {
+    "name": "invalid number",
+    "cause": "Invalid numeric value.",
+    "action": "Check data format."
+  },
+  "01745": {
+    "name": "invalid base type for REF type",
+    "cause": "Invalid REF base type.",
+    "action": "Use valid object type."
+  },
+  "01747": {
+    "name": "invalid user.table.column specification",
+    "cause": "Invalid table or column.",
+    "action": "Verify object names."
+  },
+  "01748": {
+    "name": "only simple column names allowed here",
+    "cause": "Complex expression used.",
+    "action": "Use simple names."
+  },
+  "01752": {
+    "name": "cannot delete from view without key-preserved table",
+    "cause": "View deletion requires key.",
+    "action": "Use INSTEAD OF trigger."
+  },
+  "01760": {
+    "name": "illegal argument for function",
+    "cause": "Invalid function argument.",
+    "action": "Check function documentation."
+  },
+  "01776": {
+    "name": "cannot modify more than one base table through view",
+    "cause": "Multi-table view modification.",
+    "action": "Use INSTEAD OF trigger."
+  },
+  "01789": {
+    "name": "query block has incorrect number of result columns",
+    "cause": "UNION column mismatch.",
+    "action": "Equalize column counts."
+  },
+  "01830": {
+    "name": "date format picture ends before converting entire input",
+    "cause": "Date format mismatch.",
+    "action": "Check date format."
+  },
+  "01839": {
+    "name": "date not valid for month specified",
+    "cause": "Invalid date for month.",
+    "action": "Verify date."
+  },
+  "01843": {
+    "name": "not a valid month",
+    "cause": "Invalid month value.",
+    "action": "Use valid month."
+  },
+  "01861": {
+    "name": "literal does not match format string",
+    "cause": "Format string mismatch.",
+    "action": "Check format string."
+  },
+  "01875": {
+    "name": "compiler string is not accessible",
+    "cause": "Compiler not accessible.",
+    "action": "Check compiler setup."
+  },
+  "01878": {
+    "name": "invalid parallel degree of parallelism",
+    "cause": "Invalid degree setting.",
+    "action": "Set valid degree."
+  },
+  "02000": {
+    "name": "no rows selected",
+    "cause": "SELECT returns no rows.",
+    "action": "Check query conditions."
+  },
+  "02014": {
+    "name": "cannot select FOR UPDATE from view",
+    "cause": "FOR UPDATE in view.",
+    "action": "Remove FOR UPDATE."
+  },
+  "02023": {
+    "name": "no current transaction",
+    "cause": "No active transaction.",
+    "action": "Start transaction."
+  },
+  "02030": {
+    "name": "can only specify LEVEL for READ COMMITTED or SERIALIZABLE",
+    "cause": "Invalid isolation level.",
+    "action": "Use valid isolation level."
+  },
+  "02290": {
+    "name": "check constraint violated",
+    "cause": "CHECK constraint violation.",
+    "action": "Modify data to satisfy constraint."
+  },
+  "02291": {
+    "name": "integrity constraint violated - parent key not found",
+    "cause": "FOREIGN KEY violation.",
+    "action": "Insert parent record first."
+  },
+  "02292": {
+    "name": "integrity constraint violated - child record found",
+    "cause": "Child records exist.",
+    "action": "Delete child records first."
+  },
+  "02293": {
+    "name": "cannot validate constraint - checking constraint disabled",
+    "cause": "Constraint checking disabled.",
+    "action": "Enable constraint checking."
+  },
+  "02449": {
+    "name": "unique/primary keys in table referenced by foreign keys",
+    "cause": "Table has FK references.",
+    "action": "Drop dependent tables."
+  },
+  "02451": {
+    "name": "deadlock detected - see trace file for deadlock information",
+    "cause": "Deadlock occurred.",
+    "action": "Analyze trace file."
+  },
+  "04000": {
+    "name": "invalid ALTER TABLE option",
+    "cause": "Invalid ALTER TABLE syntax.",
+    "action": "Check syntax."
+  },
+  "04002": {
+    "name": "incorrect number of values for columns specified",
+    "cause": "Column/value mismatch.",
+    "action": "Adjust values."
+  },
+  "04031": {
+    "name": "cannot allocate SGA memory",
+    "cause": "SGA allocation failed.",
+    "action": "Increase SGA_TARGET."
+  },
+  "04043": {
+    "name": "object does not exist",
+    "cause": "Object not found.",
+    "action": "Verify object name."
+  },
+  "04044": {
+    "name": "procedures, functions, packages, and types cannot be head for edit",
+    "cause": "Object type restriction.",
+    "action": "Use valid object type."
+  },
+  "04061": {
+    "name": "existing state of package has been discarded",
+    "cause": "Package invalidated.",
+    "action": "Recompile package."
+  },
+  "04062": {
+    "name": "state of package has been invalidated",
+    "cause": "Package state invalid.",
+    "action": "Reload package."
+  },
+  "04068": {
+    "name": "existing state of package body has been discarded",
+    "cause": "Package body invalidated.",
+    "action": "Recompile package body."
+  },
+  "04069": {
+    "name": "state of package body has been invalidated",
+    "cause": "Package body state invalid.",
+    "action": "Reload package body."
+  },
+  "06000": {
+    "name": "PL/SQL: unknown error",
+    "cause": "Unknown PL/SQL error.",
+    "action": "Check error details."
+  },
+  "06001": {
+    "name": "PL/SQL: out of memory",
+    "cause": "PL/SQL memory exhausted.",
+    "action": "Increase memory."
+  },
+  "06002": {
+    "name": "character set mismatch",
+    "cause": "Character set mismatch.",
+    "action": "Set correct NLS_LANG."
+  },
+  "06502": {
+    "name": "PL/SQL: numeric or value error",
+    "cause": "Type conversion error.",
+    "action": "Check data types."
+  },
+  "06512": {
+    "name": "PL/SQL: cursor already open",
+    "cause": "Cursor open attempt.",
+    "action": "Close cursor first."
+  },
+  "06513": {
+    "name": "PL/SQL: Variable Declarations End",
+    "cause": "PL/SQL syntax error.",
+    "action": "Check syntax."
+  },
+  "06550": {
+    "name": "PL/SQL: syntax error",
+    "cause": "PL/SQL syntax error.",
+    "action": "Check code syntax."
+  },
+  "06551": {
+    "name": "PL/SQL: character set name is not recognized",
+    "cause": "Invalid character set.",
+    "action": "Use valid character set."
+  },
+  "06552": {
+    "name": "PL/SQL: Statement ignored",
+    "cause": "Statement compilation failed.",
+    "action": "Fix syntax error."
+  },
+  "12000": {
+    "name": "TNS:Unable to allocate memory",
+    "cause": "TNS memory allocation failed.",
+    "action": "Increase memory."
+  },
+  "12001": {
+    "name": "TNS:illegal ADDRESS parameters",
+    "cause": "Invalid address parameters.",
+    "action": "Check address syntax."
+  },
+  "12002": {
+    "name": "TNS:No matching bind variable",
+    "cause": "No bind variable match.",
+    "action": "Check variables."
+  },
+  "12010": {
+    "name": "TNS:No matching protocol adapter",
+    "cause": "Protocol adapter not found.",
+    "action": "Check protocol."
+  },
+  "12015": {
+    "name": "TNS:Parsing error",
+    "cause": "Configuration parsing error.",
+    "action": "Check configuration."
+  },
+  "12019": {
+    "name": "TNS:Missing error code",
+    "cause": "Missing error code.",
+    "action": "Check TNS error logs."
+  },
+  "12030": {
+    "name": "TNS:Timeout occurred",
+    "cause": "Connection timeout.",
+    "action": "Increase timeout."
+  },
+  "12045": {
+    "name": "TNS:Failed to get data from socket",
+    "cause": "Socket read failure.",
+    "action": "Check network."
+  },
+  "12152": {
+    "name": "TNS:unable to send break as interrupt is disabled",
+    "cause": "Interrupt disabled.",
+    "action": "Enable interrupt."
+  },
+  "12170": {
+    "name": "TNS:Connect timeout occurred",
+    "cause": "Connect timeout.",
+    "action": "Check connectivity."
+  },
+  "12224": {
+    "name": "TNS:no listener",
+    "cause": "Listener not running.",
+    "action": "Start listener."
+  },
+  "12225": {
+    "name": "TNS:destination host unreachable",
+    "cause": "Host unreachable.",
+    "action": "Check network."
+  },
+  "12226": {
+    "name": "TNS:operating system resource quota exceeded",
+    "cause": "OS resource limit exceeded.",
+    "action": "Increase OS limits."
+  },
+  "12227": {
+    "name": "TNS:syntax error",
+    "cause": "Connection string syntax error.",
+    "action": "Check syntax."
+  },
+  "12228": {
+    "name": "TNS:protocol adapter not loadable",
+    "cause": "Protocol adapter missing.",
+    "action": "Reinstall client."
+  },
+  "12235": {
+    "name": "TNS:Failure to redirect to destination",
+    "cause": "Redirect failed.",
+    "action": "Check configuration."
+  },
+  "12514": {
+    "name": "TNS:listener could not resolve SERVICE_NAME",
+    "cause": "Service name not registered.",
+    "action": "Register service."
+  },
+  "12515": {
+    "name": "TNS:listener could not find instance ID in connect descriptor",
+    "cause": "Instance ID not found.",
+    "action": "Check descriptor."
+  },
+  "12516": {
+    "name": "TNS:listener could not find matching protocol stack",
+    "cause": "No matching protocol.",
+    "action": "Check protocols."
+  },
+  "12517": {
+    "name": "TNS:could not resolve the listener name",
+    "cause": "Listener not found.",
+    "action": "Check listener name."
+  },
+  "12518": {
+    "name": "TNS:listener could not hand off client connection",
+    "cause": "Handoff failed.",
+    "action": "Check instance."
+  },
+  "12519": {
+    "name": "TNS:no appropriate service handler found",
+    "cause": "No service handler.",
+    "action": "Check services."
+  },
+  "12520": {
+    "name": "TNS:listener could not find a matching key word",
+    "cause": "Key word not matched.",
+    "action": "Check syntax."
+  },
+  "12521": {
+    "name": "TNS:listener does not currently know of SID given in connect descriptor",
+    "cause": "SID not known.",
+    "action": "Register SID."
+  },
+  "12528": {
+    "name": "TNS:listener - all appropriate instances blocked",
+    "cause": "All instances blocked.",
+    "action": "Check instance status."
+  },
+  "12535": {
+    "name": "TNS:operation timed out",
+    "cause": "Operation timeout.",
+    "action": "Increase timeout."
+  },
+  "12537": {
+    "name": "TNS:connection closed",
+    "cause": "Connection closed.",
+    "action": "Reconnect."
+  },
+  "12541": {
+    "name": "TNS:no listener",
+    "cause": "Listener not running.",
+    "action": "Start listener."
+  },
+  "12545": {
+    "name": "Connect failed because target host or object does not exist",
+    "cause": "Host/object not found.",
+    "action": "Verify host/object."
+  },
+  "12560": {
+    "name": "TNS:protocol adapter error",
+    "cause": "Protocol adapter error.",
+    "action": "Check protocol setup."
+  },
+  "12569": {
+    "name": "TNS:packet checksum failure",
+    "cause": "Checksum error in packet.",
+    "action": "Check network."
+  },
+  "12604": {
+    "name": "TNS:Unable to open file",
+    "cause": "Cannot open configuration file.",
+    "action": "Check file path."
+  },
+  "12630": {
+    "name": "TNS:Client attempted to connect to stopped listener",
+    "cause": "Listener stopped.",
+    "action": "Start listener."
+  },
+  "12633": {
+    "name": "TNS:Shared memory driver disabled",
+    "cause": "Shared memory disabled.",
+    "action": "Enable shared memory."
+  },
+  "12638": {
+    "name": "TNS:Requested support is not available",
+    "cause": "Feature not supported.",
+    "action": "Check version."
+  },
+  "12704": {
+    "name": "character set mismatch",
+    "cause": "Character set mismatch.",
+    "action": "Set NLS_LANG."
+  },
+  "12705": {
+    "name": "Cannot connect to database using server-side external procedures callout",
+    "cause": "Callout failed.",
+    "action": "Check configuration."
+  }
+}

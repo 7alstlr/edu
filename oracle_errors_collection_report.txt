@@ -1,0 +1,95 @@
+================================================================================
+Oracle Error Code Data Collection Report
+================================================================================
+
+Generated: 2026-06-04 16:25:45
+
+COLLECTION SUMMARY
+--------------------------------------------------------------------------------
+
+ORA-00000 to ORA-00999         :   69 errors
+ORA-01000 to ORA-01999         :   55 errors
+ORA-02000 to ORA-02999         :   10 errors
+ORA-04000 to ORA-04999         :    9 errors
+ORA-06000 to ORA-06999         :    9 errors
+ORA-12000 to ORA-12999         :   37 errors
+--------------------------------------------------------------------------------
+TOTAL                          :  189 errors
+
+SAMPLE DATA (First 15 Errors)
+--------------------------------------------------------------------------------
+
+ORA-00000 | normal, successful completion
+  Cause : Operation completed successfully.
+  Action: No action needed.
+
+ORA-00001 | unique constraint violated
+  Cause : Attempt to insert duplicate value in unique constraint column.
+  Action: Check constraint and ensure unique values.
+
+ORA-00016 | Unable to set more than string sessions for developer instance
+  Cause : Session count exceeds developer instance limit.
+  Action: Reduce sessions or upgrade instance.
+
+ORA-00017 | session requested to set trace event
+  Cause : Trace event has been set.
+  Action: Check if tracing is needed.
+
+ORA-00018 | maximum number of sessions exceeded
+  Cause : Session count exceeds SESSIONS parameter.
+  Action: Increase SESSIONS parameter.
+
+ORA-00019 | maximum number of session licenses exceeded
+  Cause : Active sessions exceed licensed limit.
+  Action: Purchase additional licenses or reduce sessions.
+
+ORA-00020 | exceeded maximum number of processes in initialization parameter
+  Cause : Process count exceeds PROCESSES parameter.
+  Action: Increase PROCESSES parameter.
+
+ORA-00021 | Cannot switch session - in use by other users
+  Cause : Multiple users using same session.
+  Action: Create separate sessions for each user.
+
+ORA-00022 | invalid session ID; access denied
+  Cause : Session ID invalid or access denied.
+  Action: Verify session ID and privileges.
+
+ORA-00023 | session references process private memory; cannot detach
+  Cause : Session has process-private memory references.
+  Action: Terminate session and establish new one.
+
+ORA-00024 | logins from more than one process not allowed in single-process mode
+  Cause : Multiple process logins in single-process mode.
+  Action: Use multi-process mode.
+
+ORA-00025 | SGA memory allocation request failed
+  Cause : SGA cannot allocate requested memory.
+  Action: Increase SGA_TARGET.
+
+ORA-00026 | missing or invalid session ID
+  Cause : Session ID missing or invalid.
+  Action: Provide valid session ID.
+
+ORA-00027 | cannot kill current session
+  Cause : Attempt to kill current session.
+  Action: Use different session to kill.
+
+ORA-00028 | session has been terminated
+  Cause : Session killed or terminated.
+  Action: Reconnect to database.
+
+
+FILE FORMATS
+--------------------------------------------------------------------------------
+1. oracle_errors_full.txt  - Pipe-delimited format (CODE|NAME|CAUSE|ACTION)
+2. oracle_errors_full.json - JSON format
+3. This report file
+
+DATA CHARACTERISTICS
+--------------------------------------------------------------------------------
+Total error codes collected: 189
+Encoding: UTF-8
+Field separator: Pipe (|) for text format
+Date range: 2026-06-04
+

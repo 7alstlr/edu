@@ -1,0 +1,58 @@
+Oracle Error Code Collection Report
+============================================================
+
+Generated: 2026-06-04 16:24:38
+
+SUMMARY BY RANGE
+------------------------------------------------------------
+00000-00999: 50 errors
+01000-01999: 39 errors
+02000-02999: 6 errors
+04000-04999: 4 errors
+06000-06999: 3 errors
+12000-12999: 8 errors
+
+Total: 110 errors collected
+
+SAMPLE DATA (First 10 Errors)
+------------------------------------------------------------
+
+00000 - normal, successful completion
+  Cause: Operation completed successfully.
+  Action: No action needed. This is a successful completion message.
+
+00001 - unique constraint violated
+  Cause: An attempt was made to insert or update a duplicate value in a column that has a unique constraint.
+  Action: Check the constraint definition and ensure unique values are being inserted. Remove duplicates if necessary.
+
+00016 - Unable to set more than string sessions for developer's instance
+  Cause: The number of requested sessions exceeds the maximum allowed for developer instances.
+  Action: Reduce the number of sessions or upgrade to a standard instance.
+
+00017 - session requested to set trace event
+  Cause: Session trace event has been set.
+  Action: Check if tracing is needed. Disable trace if it's affecting performance.
+
+00018 - maximum number of sessions exceeded
+  Cause: The number of connected sessions exceeds the SESSIONS parameter.
+  Action: Increase the SESSIONS parameter or reduce the number of concurrent sessions.
+
+00019 - maximum number of session licenses exceeded
+  Cause: The number of active sessions exceeds the licensed limit.
+  Action: Purchase additional licenses or reduce concurrent sessions.
+
+00020 - exceeded maximum number of processes specified in initialization parameter
+  Cause: The number of processes exceeds the PROCESSES initialization parameter.
+  Action: Increase the PROCESSES parameter value and restart the database.
+
+00021 - Cannot switch session because that session is being used by other users
+  Cause: Multiple users are trying to use the same session.
+  Action: Create separate sessions for each user or wait for other users to release the session.
+
+00022 - invalid session ID; access denied
+  Cause: The specified session ID does not exist or access is denied.
+  Action: Verify the session ID and ensure you have proper privileges to access the session.
+
+00023 - session references process private memory; cannot detach session
+  Cause: The session has references to process-private memory and cannot be detached.
+  Action: Terminate the session and establish a new one.
