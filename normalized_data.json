@@ -1,0 +1,3074 @@
+[
+  {
+    "timestamp": "2026-06-02 08:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 49,
+    "active_sessions": 207,
+    "lock_sessions": 8,
+    "alertlog_count": 22
+  },
+  {
+    "timestamp": "2026-06-02 08:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 22,
+    "active_sessions": 44,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-02 08:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 12,
+    "active_sessions": 66,
+    "lock_sessions": 0,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-02 08:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 50,
+    "active_sessions": 159,
+    "lock_sessions": 3,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-02 08:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 10,
+    "active_sessions": 47,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-02 08:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 13,
+    "active_sessions": 61,
+    "lock_sessions": 3,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-02 09:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 46,
+    "active_sessions": 123,
+    "lock_sessions": 4,
+    "alertlog_count": 23
+  },
+  {
+    "timestamp": "2026-06-02 09:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 37,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 09:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 71,
+    "lock_sessions": 4,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-02 09:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 26,
+    "active_sessions": 183,
+    "lock_sessions": 2,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-02 09:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 13,
+    "active_sessions": 59,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 09:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 24,
+    "active_sessions": 52,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 10:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 60,
+    "active_sessions": 172,
+    "lock_sessions": 5,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-02 10:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 25,
+    "active_sessions": 49,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 10:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 32,
+    "active_sessions": 49,
+    "lock_sessions": 0,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-02 10:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 41,
+    "active_sessions": 141,
+    "lock_sessions": 8,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 10:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 17,
+    "active_sessions": 34,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 10:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 54,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 11:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 47,
+    "active_sessions": 206,
+    "lock_sessions": 4,
+    "alertlog_count": 12
+  },
+  {
+    "timestamp": "2026-06-02 11:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 53,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 11:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 22,
+    "active_sessions": 81,
+    "lock_sessions": 1,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-02 11:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 155,
+    "lock_sessions": 8,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 11:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 17,
+    "active_sessions": 37,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 11:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 14,
+    "active_sessions": 50,
+    "lock_sessions": 4,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-02 12:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 57,
+    "active_sessions": 204,
+    "lock_sessions": 5,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-02 12:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 15,
+    "active_sessions": 65,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 12:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 75,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 12:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 37,
+    "active_sessions": 199,
+    "lock_sessions": 4,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-02 12:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 10,
+    "active_sessions": 42,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 12:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 36,
+    "active_sessions": 82,
+    "lock_sessions": 3,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-02 13:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 52,
+    "active_sessions": 180,
+    "lock_sessions": 6,
+    "alertlog_count": 12
+  },
+  {
+    "timestamp": "2026-06-02 13:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 54,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 13:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 32,
+    "active_sessions": 52,
+    "lock_sessions": 2,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-02 13:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 33,
+    "active_sessions": 165,
+    "lock_sessions": 8,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-02 13:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 29,
+    "active_sessions": 63,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 13:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 16,
+    "active_sessions": 74,
+    "lock_sessions": 4,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 14:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 38,
+    "active_sessions": 158,
+    "lock_sessions": 2,
+    "alertlog_count": 10
+  },
+  {
+    "timestamp": "2026-06-02 14:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 13,
+    "active_sessions": 60,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 14:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 16,
+    "active_sessions": 73,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 14:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 59,
+    "active_sessions": 155,
+    "lock_sessions": 5,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-02 14:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 53,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 14:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 18,
+    "active_sessions": 46,
+    "lock_sessions": 3,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-02 15:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 43,
+    "active_sessions": 163,
+    "lock_sessions": 3,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-02 15:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 43,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 15:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 36,
+    "active_sessions": 76,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 15:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 58,
+    "active_sessions": 128,
+    "lock_sessions": 6,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 15:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 10,
+    "active_sessions": 37,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 15:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 56,
+    "lock_sessions": 4,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-02 16:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 53,
+    "active_sessions": 212,
+    "lock_sessions": 5,
+    "alertlog_count": 22
+  },
+  {
+    "timestamp": "2026-06-02 16:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 42,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 16:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 13,
+    "active_sessions": 52,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 16:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 41,
+    "active_sessions": 215,
+    "lock_sessions": 4,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-02 16:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 46,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 16:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 63,
+    "lock_sessions": 4,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-02 17:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 26,
+    "active_sessions": 188,
+    "lock_sessions": 1,
+    "alertlog_count": 23
+  },
+  {
+    "timestamp": "2026-06-02 17:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 49,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 17:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 33,
+    "active_sessions": 78,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 17:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 22,
+    "active_sessions": 186,
+    "lock_sessions": 3,
+    "alertlog_count": 10
+  },
+  {
+    "timestamp": "2026-06-02 17:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 56,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 17:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 82,
+    "lock_sessions": 2,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-02 18:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 37,
+    "active_sessions": 183,
+    "lock_sessions": 7,
+    "alertlog_count": 24
+  },
+  {
+    "timestamp": "2026-06-02 18:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 35,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 18:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 14,
+    "active_sessions": 68,
+    "lock_sessions": 1,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-02 18:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 30,
+    "active_sessions": 209,
+    "lock_sessions": 2,
+    "alertlog_count": 13
+  },
+  {
+    "timestamp": "2026-06-02 18:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 11,
+    "active_sessions": 60,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 18:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 15,
+    "active_sessions": 50,
+    "lock_sessions": 4,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 19:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 34,
+    "active_sessions": 195,
+    "lock_sessions": 1,
+    "alertlog_count": 14
+  },
+  {
+    "timestamp": "2026-06-02 19:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 11,
+    "active_sessions": 48,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 19:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 24,
+    "active_sessions": 71,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 19:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 49,
+    "active_sessions": 125,
+    "lock_sessions": 2,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-02 19:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 61,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-02 19:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 24,
+    "active_sessions": 81,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 20:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 50,
+    "active_sessions": 124,
+    "lock_sessions": 1,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-02 20:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 18,
+    "active_sessions": 44,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 20:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 18,
+    "active_sessions": 79,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 20:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 62,
+    "active_sessions": 126,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 20:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 25,
+    "active_sessions": 41,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-02 20:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 36,
+    "active_sessions": 92,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 21:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 138,
+    "lock_sessions": 9,
+    "alertlog_count": 18
+  },
+  {
+    "timestamp": "2026-06-02 21:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 11,
+    "active_sessions": 69,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 21:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 21,
+    "active_sessions": 81,
+    "lock_sessions": 1,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-02 21:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 36,
+    "active_sessions": 189,
+    "lock_sessions": 3,
+    "alertlog_count": 11
+  },
+  {
+    "timestamp": "2026-06-02 21:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 14,
+    "active_sessions": 42,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 21:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 14,
+    "active_sessions": 92,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 22:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 35,
+    "active_sessions": 197,
+    "lock_sessions": 3,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-02 22:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 10,
+    "active_sessions": 59,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 22:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 39,
+    "active_sessions": 72,
+    "lock_sessions": 0,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-02 22:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 39,
+    "active_sessions": 146,
+    "lock_sessions": 3,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-02 22:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 13,
+    "active_sessions": 37,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-02 22:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 28,
+    "active_sessions": 79,
+    "lock_sessions": 4,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-02 23:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 36,
+    "active_sessions": 158,
+    "lock_sessions": 8,
+    "alertlog_count": 10
+  },
+  {
+    "timestamp": "2026-06-02 23:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 24,
+    "active_sessions": 33,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-02 23:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 31,
+    "active_sessions": 58,
+    "lock_sessions": 1,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-02 23:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 25,
+    "active_sessions": 170,
+    "lock_sessions": 0,
+    "alertlog_count": 22
+  },
+  {
+    "timestamp": "2026-06-02 23:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 45,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-02 23:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 30,
+    "active_sessions": 77,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 00:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 58,
+    "active_sessions": 206,
+    "lock_sessions": 5,
+    "alertlog_count": 12
+  },
+  {
+    "timestamp": "2026-06-03 00:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 53,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 00:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 17,
+    "active_sessions": 68,
+    "lock_sessions": 0,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 00:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 57,
+    "active_sessions": 181,
+    "lock_sessions": 9,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 00:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 23,
+    "active_sessions": 59,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 00:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 35,
+    "active_sessions": 79,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 01:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 53,
+    "active_sessions": 149,
+    "lock_sessions": 7,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 01:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 23,
+    "active_sessions": 68,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 01:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 37,
+    "active_sessions": 74,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 01:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 48,
+    "active_sessions": 219,
+    "lock_sessions": 9,
+    "alertlog_count": 15
+  },
+  {
+    "timestamp": "2026-06-03 01:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 17,
+    "active_sessions": 68,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 01:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 24,
+    "active_sessions": 98,
+    "lock_sessions": 4,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 02:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 61,
+    "active_sessions": 197,
+    "lock_sessions": 6,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-03 02:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 22,
+    "active_sessions": 53,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 02:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 80,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 02:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 25,
+    "active_sessions": 158,
+    "lock_sessions": 0,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-03 02:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 10,
+    "active_sessions": 64,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 02:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 23,
+    "active_sessions": 47,
+    "lock_sessions": 4,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 03:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 28,
+    "active_sessions": 152,
+    "lock_sessions": 7,
+    "alertlog_count": 12
+  },
+  {
+    "timestamp": "2026-06-03 03:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 17,
+    "active_sessions": 59,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 03:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 39,
+    "active_sessions": 67,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 03:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 55,
+    "active_sessions": 181,
+    "lock_sessions": 9,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 03:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 51,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 03:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 33,
+    "active_sessions": 48,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 04:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 58,
+    "active_sessions": 181,
+    "lock_sessions": 4,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 04:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 29,
+    "active_sessions": 49,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 04:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 27,
+    "active_sessions": 97,
+    "lock_sessions": 1,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 04:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 50,
+    "active_sessions": 204,
+    "lock_sessions": 7,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-03 04:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 22,
+    "active_sessions": 41,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 04:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 38,
+    "active_sessions": 71,
+    "lock_sessions": 3,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 05:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 24,
+    "active_sessions": 121,
+    "lock_sessions": 7,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 05:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 13,
+    "active_sessions": 53,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 05:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 37,
+    "active_sessions": 50,
+    "lock_sessions": 3,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 05:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 38,
+    "active_sessions": 181,
+    "lock_sessions": 3,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 05:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 24,
+    "active_sessions": 47,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 05:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 35,
+    "active_sessions": 60,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 06:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 219,
+    "lock_sessions": 7,
+    "alertlog_count": 18
+  },
+  {
+    "timestamp": "2026-06-03 06:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 38,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 06:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 17,
+    "active_sessions": 60,
+    "lock_sessions": 2,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 06:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 25,
+    "active_sessions": 132,
+    "lock_sessions": 8,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-03 06:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 15,
+    "active_sessions": 46,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 06:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 32,
+    "active_sessions": 93,
+    "lock_sessions": 3,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 07:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 26,
+    "active_sessions": 198,
+    "lock_sessions": 2,
+    "alertlog_count": 9
+  },
+  {
+    "timestamp": "2026-06-03 07:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 23,
+    "active_sessions": 43,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 07:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 22,
+    "active_sessions": 97,
+    "lock_sessions": 3,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-03 07:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 206,
+    "lock_sessions": 4,
+    "alertlog_count": 10
+  },
+  {
+    "timestamp": "2026-06-03 07:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 30,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 07:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 24,
+    "active_sessions": 51,
+    "lock_sessions": 4,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 08:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 36,
+    "active_sessions": 216,
+    "lock_sessions": 2,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-03 08:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 49,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 08:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 28,
+    "active_sessions": 47,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 08:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 62,
+    "active_sessions": 179,
+    "lock_sessions": 1,
+    "alertlog_count": 9
+  },
+  {
+    "timestamp": "2026-06-03 08:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 13,
+    "active_sessions": 64,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 08:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 13,
+    "active_sessions": 47,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 09:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 64,
+    "active_sessions": 204,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 09:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 10,
+    "active_sessions": 65,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 09:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 39,
+    "active_sessions": 86,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 09:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 32,
+    "active_sessions": 194,
+    "lock_sessions": 3,
+    "alertlog_count": 13
+  },
+  {
+    "timestamp": "2026-06-03 09:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 26,
+    "active_sessions": 40,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 09:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 15,
+    "active_sessions": 56,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 10:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 23,
+    "active_sessions": 151,
+    "lock_sessions": 4,
+    "alertlog_count": 24
+  },
+  {
+    "timestamp": "2026-06-03 10:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 25,
+    "active_sessions": 63,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 10:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 32,
+    "active_sessions": 52,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 10:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 47,
+    "active_sessions": 139,
+    "lock_sessions": 6,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 10:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 44,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 10:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 19,
+    "active_sessions": 73,
+    "lock_sessions": 2,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 11:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 51,
+    "active_sessions": 137,
+    "lock_sessions": 0,
+    "alertlog_count": 23
+  },
+  {
+    "timestamp": "2026-06-03 11:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 23,
+    "active_sessions": 32,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 11:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 39,
+    "active_sessions": 86,
+    "lock_sessions": 3,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-03 11:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 52,
+    "active_sessions": 211,
+    "lock_sessions": 0,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-03 11:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 26,
+    "active_sessions": 49,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 11:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 35,
+    "active_sessions": 96,
+    "lock_sessions": 0,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-03 12:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 38,
+    "active_sessions": 149,
+    "lock_sessions": 2,
+    "alertlog_count": 15
+  },
+  {
+    "timestamp": "2026-06-03 12:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 18,
+    "active_sessions": 69,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 12:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 17,
+    "active_sessions": 88,
+    "lock_sessions": 4,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-03 12:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 23,
+    "active_sessions": 194,
+    "lock_sessions": 1,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-03 12:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 26,
+    "active_sessions": 42,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 12:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 93,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 13:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 34,
+    "active_sessions": 153,
+    "lock_sessions": 2,
+    "alertlog_count": 13
+  },
+  {
+    "timestamp": "2026-06-03 13:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 68,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 13:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 13,
+    "active_sessions": 65,
+    "lock_sessions": 3,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 13:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 20,
+    "active_sessions": 186,
+    "lock_sessions": 4,
+    "alertlog_count": 24
+  },
+  {
+    "timestamp": "2026-06-03 13:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 19,
+    "active_sessions": 47,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 13:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 91,
+    "lock_sessions": 3,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-03 14:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 20,
+    "active_sessions": 188,
+    "lock_sessions": 5,
+    "alertlog_count": 20
+  },
+  {
+    "timestamp": "2026-06-03 14:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 17,
+    "active_sessions": 36,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 14:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 14,
+    "active_sessions": 54,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 14:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 26,
+    "active_sessions": 135,
+    "lock_sessions": 1,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 14:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 69,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 14:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 35,
+    "active_sessions": 58,
+    "lock_sessions": 4,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 15:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 55,
+    "active_sessions": 157,
+    "lock_sessions": 6,
+    "alertlog_count": 15
+  },
+  {
+    "timestamp": "2026-06-03 15:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 52,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 15:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 35,
+    "active_sessions": 84,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 15:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 50,
+    "active_sessions": 167,
+    "lock_sessions": 8,
+    "alertlog_count": 9
+  },
+  {
+    "timestamp": "2026-06-03 15:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 36,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 15:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 58,
+    "lock_sessions": 2,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 16:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 24,
+    "active_sessions": 140,
+    "lock_sessions": 2,
+    "alertlog_count": 24
+  },
+  {
+    "timestamp": "2026-06-03 16:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 22,
+    "active_sessions": 68,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 16:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 21,
+    "active_sessions": 57,
+    "lock_sessions": 0,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 16:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 58,
+    "active_sessions": 194,
+    "lock_sessions": 3,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-03 16:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 19,
+    "active_sessions": 33,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 16:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 20,
+    "active_sessions": 79,
+    "lock_sessions": 4,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 17:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 46,
+    "active_sessions": 210,
+    "lock_sessions": 1,
+    "alertlog_count": 12
+  },
+  {
+    "timestamp": "2026-06-03 17:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 25,
+    "active_sessions": 58,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 17:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 29,
+    "active_sessions": 94,
+    "lock_sessions": 3,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 17:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 62,
+    "active_sessions": 211,
+    "lock_sessions": 5,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 17:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 23,
+    "active_sessions": 30,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 17:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 30,
+    "active_sessions": 59,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 18:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 35,
+    "active_sessions": 143,
+    "lock_sessions": 3,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 18:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 29,
+    "active_sessions": 69,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 18:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 37,
+    "active_sessions": 53,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 18:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 22,
+    "active_sessions": 153,
+    "lock_sessions": 1,
+    "alertlog_count": 17
+  },
+  {
+    "timestamp": "2026-06-03 18:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 24,
+    "active_sessions": 58,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 18:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 29,
+    "active_sessions": 85,
+    "lock_sessions": 1,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 19:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 41,
+    "active_sessions": 183,
+    "lock_sessions": 6,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 19:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 14,
+    "active_sessions": 48,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 19:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 36,
+    "active_sessions": 72,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 19:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 28,
+    "active_sessions": 130,
+    "lock_sessions": 1,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-03 19:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 13,
+    "active_sessions": 43,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 19:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 31,
+    "active_sessions": 93,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 20:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 51,
+    "active_sessions": 193,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 20:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 44,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 20:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 50,
+    "lock_sessions": 0,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-03 20:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 24,
+    "active_sessions": 202,
+    "lock_sessions": 0,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-03 20:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 17,
+    "active_sessions": 63,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 20:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 17,
+    "active_sessions": 87,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 21:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 30,
+    "active_sessions": 182,
+    "lock_sessions": 7,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-03 21:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 31,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 21:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 38,
+    "active_sessions": 53,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 21:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 48,
+    "active_sessions": 122,
+    "lock_sessions": 0,
+    "alertlog_count": 18
+  },
+  {
+    "timestamp": "2026-06-03 21:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 53,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 21:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 14,
+    "active_sessions": 72,
+    "lock_sessions": 3,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-03 22:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 51,
+    "active_sessions": 158,
+    "lock_sessions": 1,
+    "alertlog_count": 13
+  },
+  {
+    "timestamp": "2026-06-03 22:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 42,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 22:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 20,
+    "active_sessions": 58,
+    "lock_sessions": 4,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 22:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 45,
+    "active_sessions": 138,
+    "lock_sessions": 0,
+    "alertlog_count": 9
+  },
+  {
+    "timestamp": "2026-06-03 22:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 14,
+    "active_sessions": 42,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-03 22:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 27,
+    "active_sessions": 58,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-03 23:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 211,
+    "lock_sessions": 3,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-03 23:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 38,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-03 23:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 27,
+    "active_sessions": 56,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 23:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 59,
+    "active_sessions": 146,
+    "lock_sessions": 8,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-03 23:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 25,
+    "active_sessions": 31,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-03 23:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 35,
+    "active_sessions": 94,
+    "lock_sessions": 3,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 00:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 55,
+    "active_sessions": 160,
+    "lock_sessions": 9,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-04 00:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 19,
+    "active_sessions": 32,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 00:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 18,
+    "active_sessions": 77,
+    "lock_sessions": 0,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 00:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 58,
+    "active_sessions": 159,
+    "lock_sessions": 3,
+    "alertlog_count": 22
+  },
+  {
+    "timestamp": "2026-06-04 00:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 18,
+    "active_sessions": 56,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 00:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 22,
+    "active_sessions": 70,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 01:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 55,
+    "active_sessions": 120,
+    "lock_sessions": 6,
+    "alertlog_count": 10
+  },
+  {
+    "timestamp": "2026-06-04 01:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 36,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 01:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 63,
+    "lock_sessions": 3,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 01:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 45,
+    "active_sessions": 159,
+    "lock_sessions": 7,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-04 01:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 11,
+    "active_sessions": 52,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 01:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 16,
+    "active_sessions": 83,
+    "lock_sessions": 2,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 02:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 25,
+    "active_sessions": 133,
+    "lock_sessions": 6,
+    "alertlog_count": 22
+  },
+  {
+    "timestamp": "2026-06-04 02:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 43,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 02:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 13,
+    "active_sessions": 96,
+    "lock_sessions": 1,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 02:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 28,
+    "active_sessions": 151,
+    "lock_sessions": 3,
+    "alertlog_count": 24
+  },
+  {
+    "timestamp": "2026-06-04 02:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 16,
+    "active_sessions": 40,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 02:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 25,
+    "active_sessions": 49,
+    "lock_sessions": 3,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 03:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 34,
+    "active_sessions": 135,
+    "lock_sessions": 1,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-04 03:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 48,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 03:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 55,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 03:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 51,
+    "active_sessions": 185,
+    "lock_sessions": 5,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-04 03:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 45,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 03:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 36,
+    "active_sessions": 65,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 04:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 134,
+    "lock_sessions": 3,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-04 04:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 56,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 04:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 14,
+    "active_sessions": 51,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 04:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 30,
+    "active_sessions": 205,
+    "lock_sessions": 9,
+    "alertlog_count": 21
+  },
+  {
+    "timestamp": "2026-06-04 04:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 11,
+    "active_sessions": 52,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 04:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 12,
+    "active_sessions": 45,
+    "lock_sessions": 2,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 05:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 64,
+    "active_sessions": 182,
+    "lock_sessions": 2,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-04 05:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 18,
+    "active_sessions": 61,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 05:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 14,
+    "active_sessions": 97,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 05:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 196,
+    "lock_sessions": 5,
+    "alertlog_count": 16
+  },
+  {
+    "timestamp": "2026-06-04 05:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 29,
+    "active_sessions": 58,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 05:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 32,
+    "active_sessions": 99,
+    "lock_sessions": 2,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 06:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 48,
+    "active_sessions": 158,
+    "lock_sessions": 9,
+    "alertlog_count": 20
+  },
+  {
+    "timestamp": "2026-06-04 06:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 17,
+    "active_sessions": 57,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 06:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 19,
+    "active_sessions": 94,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 06:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 27,
+    "active_sessions": 198,
+    "lock_sessions": 6,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-04 06:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 55,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 06:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 23,
+    "active_sessions": 86,
+    "lock_sessions": 4,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 07:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 30,
+    "active_sessions": 161,
+    "lock_sessions": 9,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-04 07:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 16,
+    "active_sessions": 66,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 07:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 36,
+    "active_sessions": 66,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 07:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 42,
+    "active_sessions": 179,
+    "lock_sessions": 6,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 07:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 11,
+    "active_sessions": 48,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 07:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 29,
+    "active_sessions": 54,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 08:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 45,
+    "active_sessions": 139,
+    "lock_sessions": 7,
+    "alertlog_count": 23
+  },
+  {
+    "timestamp": "2026-06-04 08:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 55,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 08:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 20,
+    "active_sessions": 48,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 08:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 49,
+    "active_sessions": 144,
+    "lock_sessions": 1,
+    "alertlog_count": 24
+  },
+  {
+    "timestamp": "2026-06-04 08:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 57,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 08:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 25,
+    "active_sessions": 71,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 09:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 38,
+    "active_sessions": 152,
+    "lock_sessions": 3,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-04 09:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 51,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 09:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 30,
+    "active_sessions": 95,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 09:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 24,
+    "active_sessions": 181,
+    "lock_sessions": 0,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 09:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 26,
+    "active_sessions": 54,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 09:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 21,
+    "active_sessions": 72,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 10:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 28,
+    "active_sessions": 149,
+    "lock_sessions": 9,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-04 10:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 15,
+    "active_sessions": 53,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 10:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 13,
+    "active_sessions": 75,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 10:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 194,
+    "lock_sessions": 0,
+    "alertlog_count": 17
+  },
+  {
+    "timestamp": "2026-06-04 10:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 57,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 10:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 32,
+    "active_sessions": 82,
+    "lock_sessions": 0,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-04 11:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 60,
+    "active_sessions": 194,
+    "lock_sessions": 8,
+    "alertlog_count": 19
+  },
+  {
+    "timestamp": "2026-06-04 11:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 24,
+    "active_sessions": 48,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 11:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 24,
+    "active_sessions": 45,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 11:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 55,
+    "active_sessions": 173,
+    "lock_sessions": 5,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 11:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 24,
+    "active_sessions": 34,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 11:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 16,
+    "active_sessions": 92,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 12:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 46,
+    "active_sessions": 184,
+    "lock_sessions": 6,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 12:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 29,
+    "active_sessions": 60,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 12:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 26,
+    "active_sessions": 76,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 12:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 27,
+    "active_sessions": 174,
+    "lock_sessions": 4,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 12:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 16,
+    "active_sessions": 60,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 12:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 21,
+    "active_sessions": 50,
+    "lock_sessions": 0,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-04 13:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 42,
+    "active_sessions": 180,
+    "lock_sessions": 9,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 13:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 18,
+    "active_sessions": 53,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 13:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 37,
+    "active_sessions": 79,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 13:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 59,
+    "active_sessions": 130,
+    "lock_sessions": 5,
+    "alertlog_count": 13
+  },
+  {
+    "timestamp": "2026-06-04 13:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 57,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 13:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 23,
+    "active_sessions": 94,
+    "lock_sessions": 4,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 14:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 56,
+    "active_sessions": 198,
+    "lock_sessions": 8,
+    "alertlog_count": 13
+  },
+  {
+    "timestamp": "2026-06-04 14:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 14,
+    "active_sessions": 43,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 14:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 29,
+    "active_sessions": 78,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 14:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 51,
+    "active_sessions": 139,
+    "lock_sessions": 1,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-04 14:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 40,
+    "lock_sessions": 1,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 14:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 18,
+    "active_sessions": 99,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 15:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 36,
+    "active_sessions": 164,
+    "lock_sessions": 1,
+    "alertlog_count": 14
+  },
+  {
+    "timestamp": "2026-06-04 15:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 11,
+    "active_sessions": 53,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 15:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 12,
+    "active_sessions": 69,
+    "lock_sessions": 3,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 15:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 62,
+    "active_sessions": 130,
+    "lock_sessions": 0,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 15:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 21,
+    "active_sessions": 50,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 15:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 12,
+    "active_sessions": 81,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 16:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 20,
+    "active_sessions": 176,
+    "lock_sessions": 7,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 16:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 20,
+    "active_sessions": 51,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 16:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 31,
+    "active_sessions": 70,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 16:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 34,
+    "active_sessions": 148,
+    "lock_sessions": 3,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 16:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 63,
+    "lock_sessions": 1,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 16:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 15,
+    "active_sessions": 56,
+    "lock_sessions": 4,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 17:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 48,
+    "active_sessions": 201,
+    "lock_sessions": 7,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 17:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 28,
+    "active_sessions": 47,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 17:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 92,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 17:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 28,
+    "active_sessions": 138,
+    "lock_sessions": 9,
+    "alertlog_count": 12
+  },
+  {
+    "timestamp": "2026-06-04 17:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 26,
+    "active_sessions": 34,
+    "lock_sessions": 2,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 17:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 27,
+    "active_sessions": 80,
+    "lock_sessions": 3,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 18:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 37,
+    "active_sessions": 187,
+    "lock_sessions": 3,
+    "alertlog_count": 20
+  },
+  {
+    "timestamp": "2026-06-04 18:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 27,
+    "active_sessions": 40,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 18:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 57,
+    "lock_sessions": 3,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 18:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 20,
+    "active_sessions": 142,
+    "lock_sessions": 5,
+    "alertlog_count": 9
+  },
+  {
+    "timestamp": "2026-06-04 18:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 24,
+    "active_sessions": 30,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 18:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 19,
+    "active_sessions": 62,
+    "lock_sessions": 0,
+    "alertlog_count": 7
+  },
+  {
+    "timestamp": "2026-06-04 19:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 59,
+    "active_sessions": 171,
+    "lock_sessions": 5,
+    "alertlog_count": 11
+  },
+  {
+    "timestamp": "2026-06-04 19:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 12,
+    "active_sessions": 37,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 19:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 32,
+    "active_sessions": 65,
+    "lock_sessions": 2,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 19:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 24,
+    "active_sessions": 207,
+    "lock_sessions": 5,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 19:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 23,
+    "active_sessions": 36,
+    "lock_sessions": 2,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 19:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 60,
+    "lock_sessions": 4,
+    "alertlog_count": 5
+  },
+  {
+    "timestamp": "2026-06-04 20:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 44,
+    "active_sessions": 218,
+    "lock_sessions": 3,
+    "alertlog_count": 18
+  },
+  {
+    "timestamp": "2026-06-04 20:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 14,
+    "active_sessions": 46,
+    "lock_sessions": 0,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 20:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 25,
+    "active_sessions": 65,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 20:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 45,
+    "active_sessions": 161,
+    "lock_sessions": 3,
+    "alertlog_count": 24
+  },
+  {
+    "timestamp": "2026-06-04 20:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 22,
+    "active_sessions": 66,
+    "lock_sessions": 1,
+    "alertlog_count": 4
+  },
+  {
+    "timestamp": "2026-06-04 20:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 13,
+    "active_sessions": 95,
+    "lock_sessions": 3,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 21:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 23,
+    "active_sessions": 149,
+    "lock_sessions": 7,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 21:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 10,
+    "active_sessions": 34,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 21:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 30,
+    "active_sessions": 69,
+    "lock_sessions": 0,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 21:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 35,
+    "active_sessions": 166,
+    "lock_sessions": 2,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 21:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 16,
+    "active_sessions": 37,
+    "lock_sessions": 0,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 21:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 30,
+    "active_sessions": 46,
+    "lock_sessions": 1,
+    "alertlog_count": 1
+  },
+  {
+    "timestamp": "2026-06-04 22:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 37,
+    "active_sessions": 163,
+    "lock_sessions": 1,
+    "alertlog_count": 20
+  },
+  {
+    "timestamp": "2026-06-04 22:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 24,
+    "active_sessions": 66,
+    "lock_sessions": 0,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 22:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 23,
+    "active_sessions": 84,
+    "lock_sessions": 3,
+    "alertlog_count": 3
+  },
+  {
+    "timestamp": "2026-06-04 22:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 21,
+    "active_sessions": 142,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 22:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 15,
+    "active_sessions": 33,
+    "lock_sessions": 2,
+    "alertlog_count": 0
+  },
+  {
+    "timestamp": "2026-06-04 22:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 30,
+    "active_sessions": 89,
+    "lock_sessions": 2,
+    "alertlog_count": 6
+  },
+  {
+    "timestamp": "2026-06-04 23:00:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 22,
+    "active_sessions": 170,
+    "lock_sessions": 7,
+    "alertlog_count": 8
+  },
+  {
+    "timestamp": "2026-06-04 23:00:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 15,
+    "active_sessions": 65,
+    "lock_sessions": 1,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 23:00:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 18,
+    "active_sessions": 58,
+    "lock_sessions": 4,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 23:30:00",
+    "db_name": "PROD_DB",
+    "cpu_usage": 38,
+    "active_sessions": 124,
+    "lock_sessions": 3,
+    "alertlog_count": 11
+  },
+  {
+    "timestamp": "2026-06-04 23:30:00",
+    "db_name": "DEV_DB",
+    "cpu_usage": 18,
+    "active_sessions": 39,
+    "lock_sessions": 0,
+    "alertlog_count": 2
+  },
+  {
+    "timestamp": "2026-06-04 23:30:00",
+    "db_name": "TEST_DB",
+    "cpu_usage": 34,
+    "active_sessions": 65,
+    "lock_sessions": 2,
+    "alertlog_count": 1
+  }
+]
