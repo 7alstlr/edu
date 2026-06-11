@@ -1,0 +1,41 @@
+# Google Sheets 링크
+
+## 스프레드시트명: 일일업무일지_응답
+
+링크:
+https://docs.google.com/spreadsheets/d/1DALwkxX3aFSvMpKZzBZa1YenPWK6uovrj-M-1xqew8Y/edit
+
+---
+
+## 설정 정보
+
+생성 날짜: [작성 날짜]
+담당자: [본인 이름]
+시트명: 응답 (또는 raw_data)
+
+---
+
+## 컬럼 구조
+
+| 컬럼 | 이름 | 설명 |
+|------|------|------|
+| A | 제출시간 | Forms에서 자동 기록 (Timestamp) |
+| B | 날짜 | 업무를 수행한 날짜 |
+| C | 담당자명 | 업무 수행자의 이름 |
+| D | 업무내용 | 완료한 업무 내용 |
+| E | 이미지URL | Google Drive에 저장된 이미지 링크 |
+
+---
+
+## 데이터 특성
+
+- 자동 저장: Google Forms 제출 → 자동으로 행 추가
+- 이미지 저장: 첨부된 이미지는 Google Drive에 저장되고 링크만 저장
+- 백업: Google Sheets는 자동으로 버전 관리 (이전 버전 복구 가능)
+
+---
+
+## 접근 권한
+
+- 읽기/쓰기: 전체 공개 또는 특정 계정 공유
+- Make.com 연동: 이 URL의 권한을 "편집" 가능하게 설정해야 함

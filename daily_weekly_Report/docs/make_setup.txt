@@ -1,0 +1,23 @@
+# Make.com 초기 설정 완료
+
+## 계정 정보
+- 계정 생성 날짜: 2026-06-11
+- 플랜: Free (월 1000개 operation)
+
+## 연동 완료된 서비스
+✅ Google Sheets - 일일업무일지_응답
+✅ Google Docs - 일일 업무 일지 (Daily Work Log) - 주간 보고서 템플릿
+✅ Google Drive - 이미지 처리용
+✅ Outlook - 이메일 발송용
+
+## 시나리오 상태
+- 첫 번째 모듈: Google Sheets (데이터 읽기) 추가됨
+- 상태: 진행 중 (페이즈 3에서 계속)
+
+## 다음 단계
+페이즈 3: Make.com 워크플로우 구성
+- 트리거 설정 (매주 금요일 10:00)
+- 데이터 수집
+- 이미지 처리
+- Google Docs 복제 및 데이터 입력
+- Outlook 이메일 발송

@@ -1,0 +1,23 @@
+# Google Docs 템플릿 링크
+
+## 문서명: 일일 업무 일지 (Daily Work Log) - 주간 보고서 템플릿
+
+링크:
+https://docs.google.com/document/d/1_CvWG4e629XzVkOSPde6DC-yR4iEcKbiDkOJgzf-DQ4/edit
+
+생성 날짜: 2026-06-11
+담당자: [사용자 이름]
+
+---
+
+## 플레이스홀더
+
+Make.com이 자동으로 치환할 필드:
+- {{작성기간}} - 작성된 주차
+- {{담당자명}} - Google Forms의 담당자
+- {{작성날짜}} - 보고서 생성 날짜
+- {{업무_진행_사항}} - Google Forms의 업무 진행 사항
+- {{이미지_1}} - 첨부된 이미지
+- {{이슈_장애_우려}} - Google Forms의 이슈/장애 우려
+- {{다음주_중요업무}} - Google Forms의 다음 주 중요 업무
+- {{개선사항}} - Google Forms의 개선 사항
