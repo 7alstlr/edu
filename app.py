@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import numpy as np
 from datetime import datetime
 import calendar
-from supabase import create_client
+import os
 
 st.set_page_config(
     page_title="DB 모니터링",
@@ -14,6 +14,25 @@ st.set_page_config(
 )
 
 st.markdown("""
+    <script>
+    // 모든 불필요한 title 속성 제거
+    document.addEventListener('DOMContentLoaded', function() {
+        // keyboard_double, double_arrow 등의 title 제거
+        document.querySelectorAll('[title*="keyboard"], [title*="arrow"], [aria-label*="keyboard"], [aria-label*="arrow"]').forEach(el => {
+            el.removeAttribute('title');
+            el.removeAttribute('aria-label');
+        });
+    });
+
+    // 페이지 로드 후에도 계속 확인
+    setInterval(function() {
+        document.querySelectorAll('[title*="keyboard"], [title*="double"], [title*="arrow"]').forEach(el => {
+            el.title = '';
+            el.removeAttribute('aria-label');
+        });
+    }, 500);
+    </script>
+
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap');
     @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
@@ -63,8 +82,22 @@ st.markdown("""
 
     [data-testid="collapsedControl"] span,
     button[data-testid="collapsedControl"] {
-        font-family: 'Material Symbols Outlined' !important;
+        font-family: 'Material Symbols Outlined', 'Material Icons' !important;
         font-size: 20px !important;
+        color: #1E5FAD !important;
+    }
+
+    /* Streamlit Material Icon 완전 숨기기 */
+    [data-testid="stIconMaterial"] {
+        display: none !important;
+        visibility: hidden !important;
+        font-size: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: absolute !important;
+        left: -9999px !important;
     }
 
     [data-testid="selectbox"] {
@@ -169,50 +202,138 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
+def get_claude_summary(filtered_data):
+    """Claude API를 사용하여 데이터 요약"""
+    try:
+        from anthropic import Anthropic
+        import httpx
+
+        # API 키 가져오기 (secrets.toml 또는 환경변수)
+        api_key = None
+        try:
+            api_key = st.secrets.get("anthropic_api_key")
+        except:
+            api_key = os.getenv("ANTHROPIC_API_KEY")
+
+        if not api_key:
+            st.warning("⚠️ Anthropic API Key가 없습니다. `.streamlit/secrets.toml`에 `anthropic_api_key`를 추가하거나 `ANTHROPIC_API_KEY` 환경변수를 설정해주세요.")
+            return None
+
+        # SSL 검증 비활성화된 httpx 클라이언트 생성
+        http_client = httpx.Client(verify=False)
+        client = Anthropic(api_key=api_key, http_client=http_client)
+
+        # 기간 길이 계산
+        period_days = (filtered_data['timestamp'].max() - filtered_data['timestamp'].min()).days
+
+        # 데이터를 텍스트로 포맷팅
+        data_summary = f"""
+다음은 선택한 기간의 DB 모니터링 데이터입니다:
+
+DB별 통계:
+"""
+        for db in filtered_data['DB명'].unique():
+            db_data = filtered_data[filtered_data['DB명'] == db]
+            data_summary += f"""
+{db}:
+- 평균 CPU 사용률: {db_data['CPU사용율(%)'].mean():.1f}%
+- 최대 CPU 사용률: {db_data['CPU사용율(%)'].max():.1f}%
+- 평균 Active Session: {db_data['Active Session 수'].mean():.0f}
+- 최대 Lock Session: {db_data['Lock Session 수'].max():.0f}
+- 총 Alert 로그: {db_data['AlertLog Count'].sum():.0f}
+"""
+
+        # 기간이 2일 이상이면 수치 비교 추가
+        if period_days >= 1:
+            data_summary += "\n수치 비교 분석:\n"
+            # 전반부와 후반부로 나누기
+            mid_point = filtered_data['timestamp'].quantile(0.5)
+            first_half = filtered_data[filtered_data['timestamp'] <= mid_point]
+            second_half = filtered_data[filtered_data['timestamp'] > mid_point]
+
+            for db in filtered_data['DB명'].unique():
+                fh_data = first_half[first_half['DB명'] == db]
+                sh_data = second_half[second_half['DB명'] == db]
+
+                if len(fh_data) > 0 and len(sh_data) > 0:
+                    cpu_change = sh_data['CPU사용율(%)'].mean() - fh_data['CPU사용율(%)'].mean()
+                    session_change = sh_data['Active Session 수'].mean() - fh_data['Active Session 수'].mean()
+                    alert_change = sh_data['AlertLog Count'].sum() - fh_data['AlertLog Count'].sum()
+
+                    data_summary += f"""
+{db} (전반부 vs 후반부):
+- CPU 사용률 변화: {cpu_change:+.1f}% {'증가' if cpu_change > 0 else '감소'}
+- Active Session 변화: {session_change:+.0f} {'증가' if session_change > 0 else '감소'}
+- Alert 로그 변화: {alert_change:+.0f} {'증가' if alert_change > 0 else '감소'}
+"""
+
+        data_summary += f"""
+
+기간: {filtered_data['timestamp'].min()} ~ {filtered_data['timestamp'].max()}
+데이터 포인트: {len(filtered_data)}개
+"""
+
+        # Claude API 호출 (스트리밍)
+        if period_days >= 1:
+            prompt = f"""다음 DB 모니터링 데이터를 바탕으로 경영진용 요약을 작성해주세요. (간결하게, 총 800자 이내)
+형식은 마크다운으로, 각 섹션을 ##로 시작하세요.
+
+## 📊 시스템 상태
+현재 상태와 주요 DB 상태 (정상/주의/경고) - 2줄 이내
+
+## 📈 성능 추이
+기간 내 주요 변화 (증감 수치 포함) - 3줄 이내
+
+## ⚠️ 주요 이슈
+가장 중요한 문제점 2-3개 (불릿)
+
+## ✅ 권장 조치
+각 이슈의 해결 방안 2-3개 (불릿)
+
+{data_summary}"""
+        else:
+            prompt = f"""다음 DB 모니터링 데이터를 바탕으로 경영진용 요약을 작성해주세요. (간결하게, 총 700자 이내)
+형식은 마크다운으로, 각 섹션을 ##로 시작하세요.
+
+## 📊 시스템 상태
+현재 상태와 주요 DB 상태 (정상/주의/경고) - 2줄 이내
+
+## 📋 주요 지표
+CPU, Session, Lock, Alert 현황 - 3줄 이내
+
+## ⚠️ 주요 이슈
+현재 가장 중요한 문제점 2-3개 (불릿)
+
+## ✅ 권장 조치
+각 이슈의 해결 방안 2-3개 (불릿)
+
+{data_summary}"""
+
+        return (client, prompt)
+
+    except ImportError:
+        st.error("❌ anthropic 라이브러리가 필요합니다. `pip install anthropic` 실행 후 다시 시도해주세요.")
+        return None
+    except Exception as e:
+        st.error(f"❌ API 오류: {str(e)}")
+        return None
+
 @st.cache_data
 def load_data():
-    """Supabase에서 DBA 모니터링 데이터 로드"""
+    """CSV 파일에서 DBA 모니터링 데이터 로드"""
     try:
-        # Streamlit Secrets에서 Supabase 정보 로드
-        supabase_url = st.secrets["supabase_url"]
-        supabase_key = st.secrets["supabase_key"]
-
-        # Supabase 클라이언트 초기화
-        supabase = create_client(supabase_url, supabase_key)
-
-        # dba_monitoring 테이블에서 모든 데이터 조회
-        response = supabase.table("dba_monitoring").select("*").execute()
-
-        if not response.data:
-            st.error("❌ Supabase에서 데이터를 로드할 수 없습니다.")
-            return pd.DataFrame()
-
-        # DataFrame으로 변환
-        df = pd.DataFrame(response.data)
-
-        # 컬럼명 매핑 (Supabase 컬럼을 기존 CSV 형식으로 변환)
-        df.rename(columns={
-            'db_name': 'DB명',
-            'cpu_usage': 'CPU사용율(%)',
-            'active_sessions': 'Active Session 수',
-            'lock_sessions': 'Lock Session 수',
-            'alertlog_count': 'AlertLog Count'
-        }, inplace=True)
+        # CSV 파일에서 데이터 로드
+        csv_path = "dba_monitoring.csv"
+        df = pd.read_csv(csv_path)
 
         # timestamp를 datetime으로 변환
         df['timestamp'] = pd.to_datetime(df['timestamp'])
 
         return df
 
-    except KeyError:
-        st.error("❌ Streamlit Secrets에 'supabase_url'과 'supabase_key'가 필요합니다.")
-        st.info("""
-        `.streamlit/secrets.toml` 파일을 생성하고 다음을 추가하세요:
-        ```
-        supabase_url = "https://qllwpvkzsybjlhhuvbto.supabase.co"
-        supabase_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-        ```
-        """)
+    except FileNotFoundError:
+        st.error("❌ dba_monitoring.csv 파일을 찾을 수 없습니다.")
+        st.info("프로젝트 디렉토리에 `dba_monitoring.csv` 파일이 필요합니다.")
         return pd.DataFrame()
     except Exception as e:
         st.error(f"❌ 데이터 로드 중 오류: {str(e)}")
@@ -233,7 +354,7 @@ if 'applied_start' not in st.session_state:
     st.session_state.applied_dbs = list(db_options)
 
 st.title('📊 DB 모니터링')
-st.markdown('<p style="color: #7f8c8d; font-size: 14px;">데이터베이스 실시간 모니터링 대시보드 (Supabase 연동)</p>', unsafe_allow_html=True)
+
 st.markdown('---')
 
 with st.sidebar:
@@ -295,10 +416,16 @@ with st.sidebar:
     end_time = pd.Timestamp(year=end_year, month=end_month, day=end_day, hour=end_hour, minute=end_minute)
 
     st.markdown('')
-    if st.button('🔍 조회', type='primary', use_container_width=True):
-        st.session_state.applied_start = start_time
-        st.session_state.applied_end = end_time
-        st.session_state.applied_dbs = selected_dbs if selected_dbs else list(db_options)
+    col_search, col_ai = st.columns(2)
+    with col_search:
+        if st.button('🔍 조회', type='primary', use_container_width=True):
+            st.session_state.applied_start = start_time
+            st.session_state.applied_end = end_time
+            st.session_state.applied_dbs = selected_dbs if selected_dbs else list(db_options)
+
+    with col_ai:
+        if st.button('🤖 AI 요약', use_container_width=True):
+            st.session_state.show_ai_summary = True
 
 filtered_df = df[
     (df['DB명'].isin(st.session_state.applied_dbs)) &
@@ -309,6 +436,42 @@ filtered_df = df[
 if len(filtered_df) == 0:
     st.warning('선택한 기간과 DB에 해당하는 데이터가 없습니다.')
     st.stop()
+
+@st.dialog("AI 요약", width="large")
+def show_ai_summary_dialog():
+    """AI 요약을 모달 팝업으로 표시"""
+    # 제목
+    st.markdown("### DB 시스템 운영 현황 보고서")
+
+    # 보고 일자 및 모니터링 기간
+    st.markdown(f"📅 보고 일자: {datetime.now().strftime('%Y년 %m월 %d일 %H:%M:%S')}")
+    st.markdown(f"📊 모니터링 기간: {filtered_df['timestamp'].min().strftime('%Y-%m-%d %H:%M')} ~ {filtered_df['timestamp'].max().strftime('%Y-%m-%d %H:%M')}")
+
+    st.divider()
+
+    summary_result = get_claude_summary(filtered_df)
+    if summary_result:
+        client, prompt = summary_result
+        summary_placeholder = st.empty()
+        full_text = ""
+
+        try:
+            with st.spinner('생성 중...'):
+                with client.messages.stream(
+                    model="claude-opus-4-1",
+                    max_tokens=800,
+                    messages=[{"role": "user", "content": prompt}]
+                ) as stream:
+                    for text in stream.text_stream:
+                        full_text += text
+                        summary_placeholder.markdown(full_text)
+        except Exception as e:
+            st.error(f"생성 중 오류: {str(e)}")
+
+# AI 요약 팝업 표시
+if st.session_state.get('show_ai_summary', False):
+    show_ai_summary_dialog()
+    st.session_state.show_ai_summary = False
 
 col1, col2, col3, col4 = st.columns(4)
 
