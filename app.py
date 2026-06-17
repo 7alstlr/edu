@@ -334,8 +334,8 @@ def load_data():
 
         supabase = create_client(supabase_url, supabase_key)
 
-        # Supabase에서 데이터 조회 (모든 데이터 가져오기)
-        response = supabase.table('dba_monitoring').select('*').range(0, 10000).execute()
+        # Supabase에서 데이터 조회 (제한 없음 - 모든 데이터)
+        response = supabase.table('dba_monitoring').select('*').range(0, 999999).execute()
 
         if not response.data:
             st.error("❌ dba_monitoring 테이블에 데이터가 없습니다.")
