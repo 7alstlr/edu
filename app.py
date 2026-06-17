@@ -487,6 +487,10 @@ if len(filtered_df) == 0:
     st.warning('선택한 기간과 DB에 해당하는 데이터가 없습니다.')
     st.stop()
 
+# x축 포맷 결정 (조회 기간에 따라)
+period_hours = (filtered_df['timestamp'].max() - filtered_df['timestamp'].min()).total_seconds() / 3600
+xaxis_format = '%H:%M' if period_hours <= 24 else '%m/%d %H:%M'
+
 @st.dialog("AI 요약", width="large")
 def show_ai_summary_dialog():
     """AI 요약을 모달 팝업으로 표시"""
@@ -589,7 +593,7 @@ with col1:
         showlegend=True,
         legend=dict(x=0.01, y=0.99, bgcolor='rgba(255,255,255,0.8)'),
         margin=dict(l=50, r=30, t=50, b=30),
-        xaxis=dict(tickformat='%H:%M')
+        xaxis=dict(tickformat=xaxis_format)
     )
     fig_cpu.add_annotation(
         text=date_range,
@@ -627,7 +631,7 @@ with col2:
         showlegend=True,
         legend=dict(x=0.01, y=0.99, bgcolor='rgba(255,255,255,0.8)'),
         margin=dict(l=50, r=30, t=50, b=30),
-        xaxis=dict(tickformat='%H:%M')
+        xaxis=dict(tickformat=xaxis_format)
     )
     fig_session.add_annotation(
         text=date_range,
@@ -668,7 +672,7 @@ with col3:
         showlegend=True,
         legend=dict(x=0.01, y=0.99, bgcolor='rgba(255,255,255,0.8)'),
         margin=dict(l=50, r=30, t=50, b=30),
-        xaxis=dict(tickformat='%H:%M')
+        xaxis=dict(tickformat=xaxis_format)
     )
     fig_lock.add_annotation(
         text=date_range,
@@ -707,7 +711,7 @@ with col4:
         showlegend=True,
         legend=dict(x=0.01, y=0.99, bgcolor='rgba(255,255,255,0.8)'),
         margin=dict(l=50, r=30, t=50, b=30),
-        xaxis=dict(tickformat='%H:%M')
+        xaxis=dict(tickformat=xaxis_format)
     )
     fig_alert.add_annotation(
         text=date_range,
