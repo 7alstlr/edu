@@ -318,6 +318,7 @@ CPU, Session, Lock, Alert 현황 - 3줄 이내
         st.error(f"❌ API 오류: {str(e)}")
         return None
 
+@st.cache_data(key="load_data_v2")
 def load_data():
     """Supabase에서 DBA 모니터링 데이터 로드"""
     try:
