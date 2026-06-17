@@ -499,16 +499,16 @@ if period_hours > 24:
             midnight_points.append(ts)
 
 def add_midnight_labels(fig, midnight_points):
-    """자정 지점에 날짜 레이블 추가"""
+    """자정 지점에 날짜 레이블 추가 (x축 바로 아래)"""
     for midnight in midnight_points:
         fig.add_annotation(
             x=midnight,
-            y=1.08,
+            y=-0.18,
             text=midnight.strftime('%m/%d'),
             showarrow=False,
             xref='x',
             yref='paper',
-            font=dict(size=10, color='#666'),
+            font=dict(size=10, color='#1E5FAD', weight='bold'),
             xanchor='center'
         )
 
