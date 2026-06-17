@@ -318,8 +318,8 @@ CPU, Session, Lock, Alert 현황 - 3줄 이내
         st.error(f"❌ API 오류: {str(e)}")
         return None
 
-@st.cache_data(key="load_data_v2")
-def load_data():
+@st.cache_data
+def load_data_v2():
     """Supabase에서 DBA 모니터링 데이터 로드"""
     try:
         from supabase import create_client
@@ -366,7 +366,7 @@ def load_data():
         st.error(f"❌ Supabase 데이터 로드 중 오류: {str(e)}")
         return pd.DataFrame(), False
 
-df, supabase_connected = load_data()
+df, supabase_connected = load_data_v2()
 
 if df.empty:
     st.stop()
