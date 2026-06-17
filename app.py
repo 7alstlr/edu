@@ -318,28 +318,53 @@ CPU, Session, Lock, Alert 현황 - 3줄 이내
         st.error(f"❌ API 오류: {str(e)}")
         return None
 
-@st.cache_data
 def load_data():
-    """CSV 파일에서 DBA 모니터링 데이터 로드"""
+    """Supabase에서 DBA 모니터링 데이터 로드"""
     try:
-        # CSV 파일에서 데이터 로드
-        csv_path = "dba_monitoring.csv"
-        df = pd.read_csv(csv_path)
+        from supabase import create_client
+
+        # Supabase 클라이언트 초기화
+        supabase_url = st.secrets.get("supabase_url")
+        supabase_key = st.secrets.get("supabase_key")
+
+        if not supabase_url or not supabase_key:
+            st.error("❌ Supabase 설정이 없습니다.")
+            st.info("`.streamlit/secrets.toml`에 `supabase_url`과 `supabase_key`를 추가해주세요.")
+            return pd.DataFrame(), False
+
+        supabase = create_client(supabase_url, supabase_key)
+
+        # Supabase에서 데이터 조회
+        response = supabase.table('dba_monitoring').select('*').execute()
+
+        if not response.data:
+            st.error("❌ dba_monitoring 테이블에 데이터가 없습니다.")
+            return pd.DataFrame(), False
+
+        df = pd.DataFrame(response.data)
+
+        # 컬럼명 매핑 (Supabase → app.py)
+        df = df.rename(columns={
+            'db_name': 'DB명',
+            'cpu_usage': 'CPU사용율(%)',
+            'active_sessions': 'Active Session 수',
+            'lock_sessions': 'Lock Session 수',
+            'alertlog_count': 'AlertLog Count'
+        })
 
         # timestamp를 datetime으로 변환
         df['timestamp'] = pd.to_datetime(df['timestamp'])
 
-        return df
+        return df, True
 
-    except FileNotFoundError:
-        st.error("❌ dba_monitoring.csv 파일을 찾을 수 없습니다.")
-        st.info("프로젝트 디렉토리에 `dba_monitoring.csv` 파일이 필요합니다.")
-        return pd.DataFrame()
+    except ImportError:
+        st.error("❌ supabase 라이브러리가 필요합니다. `pip install supabase` 실행 후 다시 시도해주세요.")
+        return pd.DataFrame(), False
     except Exception as e:
-        st.error(f"❌ 데이터 로드 중 오류: {str(e)}")
-        return pd.DataFrame()
+        st.error(f"❌ Supabase 데이터 로드 중 오류: {str(e)}")
+        return pd.DataFrame(), False
 
-df = load_data()
+df, supabase_connected = load_data()
 
 if df.empty:
     st.stop()
@@ -354,6 +379,11 @@ if 'applied_start' not in st.session_state:
     st.session_state.applied_dbs = list(db_options)
 
 st.title('📊 DB 모니터링')
+
+if supabase_connected:
+    st.caption('✅ supabase 연결 완료')
+else:
+    st.caption('❌ supabase 연결 실패')
 
 st.markdown('---')
 
