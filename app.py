@@ -275,7 +275,7 @@ DB별 통계:
 
         # Claude API 호출 (스트리밍)
         if period_days >= 1:
-            prompt = f"""다음 DB 모니터링 데이터를 바탕으로 경영진용 요약을 작성해주세요. (간결하게, 총 800자 이내)
+            prompt = f"""다음 DB 모니터링 데이터를 바탕으로 경영진용 요약을 작성해주세요. (간결하게, 총 1000자 이내)
 형식은 마크다운으로, 각 섹션을 ##로 시작하세요.
 
 ## 📊 시스템 상태
@@ -292,7 +292,7 @@ DB별 통계:
 
 {data_summary}"""
         else:
-            prompt = f"""다음 DB 모니터링 데이터를 바탕으로 경영진용 요약을 작성해주세요. (간결하게, 총 700자 이내)
+            prompt = f"""다음 DB 모니터링 데이터를 바탕으로 경영진용 요약을 작성해주세요. (간결하게, 총 1000자 이내)
 형식은 마크다운으로, 각 섹션을 ##로 시작하세요.
 
 ## 📊 시스템 상태
@@ -509,7 +509,7 @@ def show_ai_summary_dialog():
             with st.spinner('생성 중...'):
                 with client.messages.stream(
                     model="claude-opus-4-1",
-                    max_tokens=800,
+                    max_tokens=1200,
                     messages=[{"role": "user", "content": prompt}]
                 ) as stream:
                     for text in stream.text_stream:
