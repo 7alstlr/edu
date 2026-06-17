@@ -383,7 +383,8 @@ if 'applied_start' not in st.session_state:
 st.title('📊 DB 모니터링')
 
 if supabase_connected:
-    st.caption(f'✅ supabase 연결 완료 ({len(df):,}개 데이터) | 업데이트: 2026-06-15')
+    latest_update = df['timestamp'].max().strftime('%Y-%m-%d %H:%M')
+    st.caption(f'✅ supabase 연결 완료 ({len(df):,}개 데이터) | 업데이트: {latest_update}')
 else:
     st.caption('❌ supabase 연결 실패')
 
