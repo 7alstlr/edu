@@ -399,8 +399,9 @@ if 'applied_start' not in st.session_state:
 st.title('📊 DB 모니터링')
 
 if supabase_connected:
-    latest_update = df['timestamp'].max().strftime('%Y-%m-%d %H:%M')
-    st.caption(f'✅ supabase 연결 완료 ({len(df):,}개 데이터) | 업데이트: {latest_update}')
+    first_date = df['timestamp'].min().strftime('%Y-%m-%d %H:%M')
+    last_date = df['timestamp'].max().strftime('%Y-%m-%d %H:%M')
+    st.caption(f'✅ supabase 연결 완료 ({len(df):,}개 데이터) | 조회 가능 기간: {first_date} ~ {last_date}')
 else:
     st.caption('❌ supabase 연결 실패')
 
