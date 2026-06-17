@@ -487,9 +487,30 @@ if len(filtered_df) == 0:
     st.warning('선택한 기간과 DB에 해당하는 데이터가 없습니다.')
     st.stop()
 
-# x축 포맷 결정 (조회 기간에 따라)
+# x축 포맷 결정 및 자정 지점 찾기
 period_hours = (filtered_df['timestamp'].max() - filtered_df['timestamp'].min()).total_seconds() / 3600
-xaxis_format = '%H:%M' if period_hours <= 24 else '%m/%d %H:%M'
+xaxis_format = '%H:%M'
+
+# 자정 지점 찾기 (날짜 변경 지점)
+midnight_points = []
+if period_hours > 24:
+    for ts in sorted(filtered_df['timestamp'].unique()):
+        if ts.hour == 0 and ts.minute == 0:
+            midnight_points.append(ts)
+
+def add_midnight_labels(fig, midnight_points):
+    """자정 지점에 날짜 레이블 추가"""
+    for midnight in midnight_points:
+        fig.add_annotation(
+            x=midnight,
+            y=1.08,
+            text=midnight.strftime('%m/%d'),
+            showarrow=False,
+            xref='x',
+            yref='paper',
+            font=dict(size=10, color='#666'),
+            xanchor='center'
+        )
 
 @st.dialog("AI 요약", width="large")
 def show_ai_summary_dialog():
@@ -595,6 +616,7 @@ with col1:
         margin=dict(l=50, r=30, t=50, b=30),
         xaxis=dict(tickformat=xaxis_format)
     )
+    add_midnight_labels(fig_cpu, midnight_points)
     fig_cpu.add_annotation(
         text=date_range,
         xref='paper', yref='paper',
@@ -633,6 +655,7 @@ with col2:
         margin=dict(l=50, r=30, t=50, b=30),
         xaxis=dict(tickformat=xaxis_format)
     )
+    add_midnight_labels(fig_session, midnight_points)
     fig_session.add_annotation(
         text=date_range,
         xref='paper', yref='paper',
@@ -674,6 +697,7 @@ with col3:
         margin=dict(l=50, r=30, t=50, b=30),
         xaxis=dict(tickformat=xaxis_format)
     )
+    add_midnight_labels(fig_lock, midnight_points)
     fig_lock.add_annotation(
         text=date_range,
         xref='paper', yref='paper',
@@ -713,6 +737,7 @@ with col4:
         margin=dict(l=50, r=30, t=50, b=30),
         xaxis=dict(tickformat=xaxis_format)
     )
+    add_midnight_labels(fig_alert, midnight_points)
     fig_alert.add_annotation(
         text=date_range,
         xref='paper', yref='paper',
