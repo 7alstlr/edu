@@ -355,6 +355,7 @@ def load_data():
         # timestamp를 datetime으로 변환
         df['timestamp'] = pd.to_datetime(df['timestamp'])
 
+        print(f"✅ Supabase에서 {len(df)}개 행 로드됨")
         return df, True
 
     except ImportError:
@@ -381,7 +382,7 @@ if 'applied_start' not in st.session_state:
 st.title('📊 DB 모니터링')
 
 if supabase_connected:
-    st.caption('✅ supabase 연결 완료')
+    st.caption(f'✅ supabase 연결 완료 ({len(df):,}개 데이터)')
 else:
     st.caption('❌ supabase 연결 실패')
 
