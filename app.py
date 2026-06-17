@@ -335,14 +335,30 @@ def load_data_v2():
 
         supabase = create_client(supabase_url, supabase_key)
 
-        # Supabase에서 데이터 조회 (제한 없음 - 모든 데이터)
-        response = supabase.table('dba_monitoring').select('*').range(0, 999999).execute()
+        # Supabase에서 모든 데이터 조회 (페이징)
+        all_data = []
+        page_size = 1000
+        offset = 0
 
-        if not response.data:
+        while True:
+            response = supabase.table('dba_monitoring').select('*').range(offset, offset + page_size - 1).execute()
+
+            if not response.data:
+                break
+
+            all_data.extend(response.data)
+
+            # 한 페이지 분량보다 적으면 마지막 페이지
+            if len(response.data) < page_size:
+                break
+
+            offset += page_size
+
+        if not all_data:
             st.error("❌ dba_monitoring 테이블에 데이터가 없습니다.")
             return pd.DataFrame(), False
 
-        df = pd.DataFrame(response.data)
+        df = pd.DataFrame(all_data)
 
         # 컬럼명 매핑 (Supabase → app.py)
         df = df.rename(columns={
