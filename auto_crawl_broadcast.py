@@ -63,13 +63,18 @@ def crawl_hnsmall():
             for item in items:
                 try:
                     # 각 항목에서 필요한 정보 추출 (실제 HTML 구조에 맞게 수정)
+                    program_elem = item.find('div', class_='program-name')
+                    product_elem = item.find('div', class_='product-name')
+                    price_elem = item.find('div', class_='price')
+                    desc_elem = item.find('div', class_='description')
+
                     broadcast = {
                         'timestamp': datetime.now().replace(minute=0, second=0, microsecond=0),
                         'end_time': datetime.now().replace(minute=0, second=0, microsecond=0) + timedelta(hours=1),
-                        'program_name': item.find('div', class_='program-name')?.text.strip() or 'Unknown',
-                        'product_name': item.find('div', class_='product-name')?.text.strip() or 'Unknown',
-                        'product_price': item.find('div', class_='price')?.text.strip() or '0',
-                        'description': item.find('div', class_='description')?.text.strip() or '',
+                        'program_name': program_elem.text.strip() if program_elem else 'Unknown',
+                        'product_name': product_elem.text.strip() if product_elem else 'Unknown',
+                        'product_price': price_elem.text.strip() if price_elem else '0',
+                        'description': desc_elem.text.strip() if desc_elem else '',
                         'duration_minutes': 60,
                         'channel': 'HOME & SHOPPING',
                         'host': 'Unknown'
