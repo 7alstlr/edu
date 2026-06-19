@@ -375,6 +375,50 @@ def load_data_v2():
         print(f"✅ Supabase에서 {len(df)}개 행 로드됨")
         return df, True
 
+@st.cache_data
+def load_broadcast_data():
+    """Supabase에서 방송 데이터 로드"""
+    try:
+        from supabase import create_client
+
+        supabase_url = st.secrets.get("supabase_url")
+        supabase_key = st.secrets.get("supabase_key")
+
+        if not supabase_url or not supabase_key:
+            return pd.DataFrame()
+
+        supabase = create_client(supabase_url, supabase_key)
+
+        # 모든 방송 데이터 조회
+        all_data = []
+        page_size = 1000
+        offset = 0
+
+        while True:
+            response = supabase.table('hnsmall_broadcast').select('*').range(offset, offset + page_size - 1).execute()
+
+            if not response.data:
+                break
+
+            all_data.extend(response.data)
+
+            if len(response.data) < page_size:
+                break
+
+            offset += page_size
+
+        if not all_data:
+            return pd.DataFrame()
+
+        df = pd.DataFrame(all_data)
+        df['timestamp'] = pd.to_datetime(df['timestamp'])
+
+        return df
+
+    except Exception as e:
+        print(f"방송 데이터 로드 오류: {str(e)}")
+        return pd.DataFrame()
+
     except ImportError:
         st.error("❌ supabase 라이브러리가 필요합니다. `pip install supabase` 실행 후 다시 시도해주세요.")
         return pd.DataFrame(), False
@@ -770,6 +814,42 @@ with col2:
         file_name=f'db_monitoring_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv',
         mime='text/csv'
     )
+
+st.markdown('---')
+st.subheader('📺 홈앤쇼핑 TV 편성표')
+
+# 방송 데이터 로드
+broadcast_df = load_broadcast_data()
+
+if not broadcast_df.empty:
+    # 조회 기간에 해당하는 방송 정보 필터링
+    filtered_broadcast = broadcast_df[
+        (broadcast_df['timestamp'] >= st.session_state.applied_start) &
+        (broadcast_df['timestamp'] <= st.session_state.applied_end)
+    ].copy()
+
+    if len(filtered_broadcast) > 0:
+        # 방송 정보 표시
+        broadcast_display = filtered_broadcast[['timestamp', 'program_name', 'product_name', 'product_price', 'host']].copy()
+        broadcast_display['timestamp'] = broadcast_display['timestamp'].dt.strftime('%Y-%m-%d %H:%M')
+        broadcast_display.columns = ['방송시간', '프로그램명', '상품명', '가격', '진행자']
+        broadcast_display = broadcast_display.sort_values('방송시간', ascending=False).reset_index(drop=True)
+
+        st.dataframe(broadcast_display, use_container_width=True, hide_index=True)
+
+        col1, col2 = st.columns([2, 1])
+        with col2:
+            broadcast_csv = broadcast_display.to_csv(index=False, encoding='utf-8-sig')
+            st.download_button(
+                label='📥 방송정보 CSV 다운로드',
+                data=broadcast_csv,
+                file_name=f'hnsmall_broadcast_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv',
+                mime='text/csv'
+            )
+    else:
+        st.info('선택한 기간에 방송 정보가 없습니다.')
+else:
+    st.warning('방송 데이터를 불러올 수 없습니다.')
 
 st.markdown('---')
 st.caption('🔧 © 2026 홈앤쇼핑 DB 모니터링 시스템 (Supabase 연동)')
