@@ -385,11 +385,13 @@ def load_broadcast_data_v1():
     try:
         from supabase import create_client
 
+        # Supabase 클라이언트 초기화
         supabase_url = st.secrets.get("supabase_url")
         supabase_key = st.secrets.get("supabase_key")
 
         if not supabase_url or not supabase_key:
             st.error("❌ Supabase 설정이 없습니다.")
+            st.info("`.streamlit/secrets.toml`에 `supabase_url`과 `supabase_key`를 추가해주세요.")
             return pd.DataFrame()
 
         supabase = create_client(supabase_url, supabase_key)

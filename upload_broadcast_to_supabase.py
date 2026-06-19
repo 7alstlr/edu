@@ -1,6 +1,9 @@
 import pandas as pd
 from supabase import create_client
-import httpx
+import ssl
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # 방송 데이터를 Supabase에 업로드
 def upload_broadcast_to_supabase():
