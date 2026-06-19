@@ -380,7 +380,7 @@ def load_data_v2():
         return pd.DataFrame(), False
 
 @st.cache_data
-def load_broadcast_data():
+def load_broadcast_data_v1():
     """Supabase에서 방송 데이터 로드"""
     try:
         from supabase import create_client
@@ -389,29 +389,35 @@ def load_broadcast_data():
         supabase_key = st.secrets.get("supabase_key")
 
         if not supabase_url or not supabase_key:
+            st.warning("⚠️ Supabase 설정이 없습니다.")
             return pd.DataFrame()
 
         supabase = create_client(supabase_url, supabase_key)
 
-        # 모든 방송 데이터 조회
+        # 모든 방송 데이터 조회 (페이징)
         all_data = []
         page_size = 1000
         offset = 0
 
         while True:
-            response = supabase.table('hnsmall_broadcast').select('*').range(offset, offset + page_size - 1).execute()
+            try:
+                response = supabase.table('hnsmall_broadcast').select('*').range(offset, offset + page_size - 1).execute()
 
-            if not response.data:
+                if not response.data:
+                    break
+
+                all_data.extend(response.data)
+
+                if len(response.data) < page_size:
+                    break
+
+                offset += page_size
+            except Exception as e:
+                st.error(f"❌ Supabase 쿼리 오류: {str(e)[:100]}")
                 break
-
-            all_data.extend(response.data)
-
-            if len(response.data) < page_size:
-                break
-
-            offset += page_size
 
         if not all_data:
+            st.warning("⚠️ Supabase 'hnsmall_broadcast' 테이블이 비어있거나 존재하지 않습니다.")
             return pd.DataFrame()
 
         df = pd.DataFrame(all_data)
@@ -420,7 +426,7 @@ def load_broadcast_data():
         return df
 
     except Exception as e:
-        print(f"방송 데이터 로드 오류: {str(e)}")
+        st.error(f"❌ 방송 데이터 로드 오류: {str(e)[:150]}")
         return pd.DataFrame()
 
     except ImportError:
@@ -803,7 +809,7 @@ st.markdown('---')
 st.subheader('📺 홈앤쇼핑 TV 편성표')
 
 # 방송 데이터 로드
-broadcast_df = load_broadcast_data()
+broadcast_df = load_broadcast_data_v1()
 
 if not broadcast_df.empty:
     # 조회 기간에 해당하는 방송 정보 필터링
