@@ -800,26 +800,6 @@ with col4:
     st.plotly_chart(fig_alert, use_container_width=True)
 
 st.markdown('---')
-st.subheader('📋 상세 데이터')
-
-display_cols = ['timestamp', 'DB명', 'CPU사용율(%)', 'Active Session 수', 'Lock Session 수', 'AlertLog Count']
-display_df = filtered_df[display_cols].copy()
-display_df['timestamp'] = display_df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
-display_df = display_df.sort_values('timestamp', ascending=False).reset_index(drop=True)
-
-st.dataframe(display_df, use_container_width=True, hide_index=True)
-
-col1, col2 = st.columns([2, 1])
-with col2:
-    csv = display_df.to_csv(index=False, encoding='utf-8-sig')
-    st.download_button(
-        label='📥 CSV 다운로드',
-        data=csv,
-        file_name=f'db_monitoring_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv',
-        mime='text/csv'
-    )
-
-st.markdown('---')
 st.subheader('📺 홈앤쇼핑 TV 편성표')
 
 # 방송 데이터 로드
@@ -854,6 +834,26 @@ if not broadcast_df.empty:
         st.info('선택한 기간에 방송 정보가 없습니다.')
 else:
     st.warning('방송 데이터를 불러올 수 없습니다.')
+
+st.markdown('---')
+st.subheader('📋 상세 데이터')
+
+display_cols = ['timestamp', 'DB명', 'CPU사용율(%)', 'Active Session 수', 'Lock Session 수', 'AlertLog Count']
+display_df = filtered_df[display_cols].copy()
+display_df['timestamp'] = display_df['timestamp'].dt.strftime('%Y-%m-%d %H:%M:%S')
+display_df = display_df.sort_values('timestamp', ascending=False).reset_index(drop=True)
+
+st.dataframe(display_df, use_container_width=True, hide_index=True)
+
+col1, col2 = st.columns([2, 1])
+with col2:
+    csv = display_df.to_csv(index=False, encoding='utf-8-sig')
+    st.download_button(
+        label='📥 CSV 다운로드',
+        data=csv,
+        file_name=f'db_monitoring_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv',
+        mime='text/csv'
+    )
 
 st.markdown('---')
 st.caption('🔧 © 2026 홈앤쇼핑 DB 모니터링 시스템 (Supabase 연동)')
