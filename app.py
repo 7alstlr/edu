@@ -431,12 +431,19 @@ def load_broadcast_data_v2():
         st.error(f"❌ 방송 데이터 로드 중 오류: {str(e)}")
         return pd.DataFrame()
 
-    except ImportError:
-        st.error("❌ supabase 라이브러리가 필요합니다. `pip install supabase` 실행 후 다시 시도해주세요.")
-        return pd.DataFrame(), False
-    except Exception as e:
-        st.error(f"❌ Supabase 데이터 로드 중 오류: {str(e)}")
-        return pd.DataFrame(), False
+def get_broadcast_info(timestamp, broadcast_df):
+    """특정 시간대의 방송 정보를 포맷팅"""
+    if broadcast_df.empty:
+        return "방송 정보 없음"
+
+    # 정확한 시간대 매칭
+    matching = broadcast_df[broadcast_df['timestamp'] == timestamp]
+
+    if matching.empty:
+        return "방송 정보 없음"
+
+    row = matching.iloc[0]
+    return f"🎬 {row['program_name']}<br>상품: {row['product_name']}<br>가격: {row['product_price']}<br>진행자: {row['host']}"
 
 df, supabase_connected = load_data_v2()
 
@@ -642,6 +649,9 @@ st.markdown('---')
 
 st.subheader('📊 시각화 대시보드')
 
+# 방송 데이터 미리 로드 (차트에서 사용)
+broadcast_df = load_broadcast_data_v2()
+
 col1, col2 = st.columns(2)
 
 # 날짜 범위 추출
@@ -650,14 +660,16 @@ date_range = f"{filtered_df['timestamp'].min().strftime('%Y/%m/%d')} ~ {filtered
 with col1:
     fig_cpu = go.Figure()
     for db_name in st.session_state.applied_dbs:
-        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
+        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
+        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
         fig_cpu.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['CPU사용율(%)'],
             mode='lines',
             name=db_name,
             line=dict(width=2),
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>CPU: %{y:.1f}%<extra></extra>'
+            customdata=db_data['broadcast_info'],
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>CPU: %{y:.1f}%<br><br>%{customdata}<extra></extra>'
         ))
 
     fig_cpu.update_layout(
@@ -689,14 +701,16 @@ with col1:
 with col2:
     fig_session = go.Figure()
     for db_name in st.session_state.applied_dbs:
-        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
+        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
+        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
         fig_session.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['Active Session 수'],
             mode='lines',
             name=db_name,
             line=dict(width=2),
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>세션: %{y:.0f}<extra></extra>'
+            customdata=db_data['broadcast_info'],
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>세션: %{y:.0f}<br><br>%{customdata}<extra></extra>'
         ))
 
     fig_session.update_layout(
@@ -730,7 +744,8 @@ col3, col4 = st.columns(2)
 with col3:
     fig_lock = go.Figure()
     for db_name in st.session_state.applied_dbs:
-        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
+        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
+        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
         fig_lock.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['Lock Session 수'],
@@ -738,7 +753,8 @@ with col3:
             name=db_name,
             line=dict(width=2),
             marker=dict(size=4),
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Lock: %{y:.0f}<extra></extra>'
+            customdata=db_data['broadcast_info'],
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Lock: %{y:.0f}<br><br>%{customdata}<extra></extra>'
         ))
 
     fig_lock.update_layout(
@@ -770,7 +786,8 @@ with col3:
 with col4:
     fig_alert = go.Figure()
     for db_name in st.session_state.applied_dbs:
-        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp')
+        db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
+        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
         fig_alert.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['AlertLog Count'],
@@ -778,7 +795,8 @@ with col4:
             name=db_name,
             line=dict(width=2),
             marker=dict(size=4),
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Alert: %{y:.0f}<extra></extra>'
+            customdata=db_data['broadcast_info'],
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Alert: %{y:.0f}<br><br>%{customdata}<extra></extra>'
         ))
 
     fig_alert.update_layout(
@@ -809,9 +827,6 @@ with col4:
 
 st.markdown('---')
 st.subheader('📺 홈앤쇼핑 TV 편성표')
-
-# 방송 데이터 로드
-broadcast_df = load_broadcast_data_v2()
 
 if not broadcast_df.empty:
     # 조회 기간에 해당하는 방송 정보 필터링
