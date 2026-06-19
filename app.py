@@ -389,44 +389,44 @@ def load_broadcast_data_v1():
         supabase_key = st.secrets.get("supabase_key")
 
         if not supabase_url or not supabase_key:
-            st.warning("⚠️ Supabase 설정이 없습니다.")
+            st.error("❌ Supabase 설정이 없습니다.")
             return pd.DataFrame()
 
         supabase = create_client(supabase_url, supabase_key)
 
-        # 모든 방송 데이터 조회 (페이징)
+        # Supabase에서 모든 데이터 조회 (페이징)
         all_data = []
         page_size = 1000
         offset = 0
 
         while True:
-            try:
-                response = supabase.table('hnsmall_broadcast').select('*').range(offset, offset + page_size - 1).execute()
+            response = supabase.table('hnsmall_broadcast').select('*').range(offset, offset + page_size - 1).execute()
 
-                if not response.data:
-                    break
-
-                all_data.extend(response.data)
-
-                if len(response.data) < page_size:
-                    break
-
-                offset += page_size
-            except Exception as e:
-                st.error(f"❌ Supabase 쿼리 오류: {str(e)[:100]}")
+            if not response.data:
                 break
 
+            all_data.extend(response.data)
+
+            # 한 페이지 분량보다 적으면 마지막 페이지
+            if len(response.data) < page_size:
+                break
+
+            offset += page_size
+
         if not all_data:
-            st.warning("⚠️ Supabase 'hnsmall_broadcast' 테이블이 비어있거나 존재하지 않습니다.")
+            st.error("❌ hnsmall_broadcast 테이블에 데이터가 없습니다.")
             return pd.DataFrame()
 
         df = pd.DataFrame(all_data)
+
+        # timestamp를 datetime으로 변환
         df['timestamp'] = pd.to_datetime(df['timestamp'])
 
+        print(f"✅ Supabase에서 {len(df)}개 방송 데이터 로드됨")
         return df
 
     except Exception as e:
-        st.error(f"❌ 방송 데이터 로드 오류: {str(e)[:150]}")
+        st.error(f"❌ 방송 데이터 로드 중 오류: {str(e)}")
         return pd.DataFrame()
 
     except ImportError:
