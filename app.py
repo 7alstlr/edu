@@ -440,10 +440,19 @@ def get_broadcast_info(timestamp, broadcast_df, check_prod_only=False):
     if check_prod_only and 'PROD_DB' not in st.session_state.applied_dbs:
         return "방송 정보 없음"
 
-    # 시간만 비교 (분은 무시) - 1시간 방송 기간 대응
-    timestamp_hour = pd.Timestamp(timestamp).floor('H')
-    broadcast_df['hour'] = broadcast_df['timestamp'].dt.floor('H')
-    matching = broadcast_df[broadcast_df['hour'] == timestamp_hour]
+    # 시작시간 <= 현재시간 < 종료시간 범위 매칭
+    ts = pd.Timestamp(timestamp)
+
+    # end_time이 없으면 계산 (duration_minutes 기반)
+    broadcast_check = broadcast_df.copy()
+    if 'end_time' not in broadcast_check.columns and 'duration_minutes' in broadcast_check.columns:
+        broadcast_check['end_time'] = broadcast_check['timestamp'] + pd.to_timedelta(broadcast_check['duration_minutes'], unit='m')
+
+    # 시간 범위 내의 방송 찾기
+    matching = broadcast_check[
+        (broadcast_check['timestamp'] <= ts) &
+        (broadcast_check['end_time'] > ts)
+    ]
 
     if matching.empty:
         return "방송 정보 없음"
@@ -657,6 +666,10 @@ st.subheader('📊 시각화 대시보드')
 
 # 방송 데이터 미리 로드 (차트에서 사용)
 broadcast_df = load_broadcast_data_v2()
+
+# 종료시간 계산 (시작시간 + 방송시간)
+if not broadcast_df.empty and 'duration_minutes' in broadcast_df.columns:
+    broadcast_df['end_time'] = broadcast_df['timestamp'] + pd.to_timedelta(broadcast_df['duration_minutes'], unit='m')
 
 col1, col2 = st.columns(2)
 
