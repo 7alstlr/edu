@@ -375,6 +375,10 @@ def load_data_v2():
         print(f"✅ Supabase에서 {len(df)}개 행 로드됨")
         return df, True
 
+    except Exception as e:
+        st.error(f"❌ DBA 모니터링 데이터 로드 중 오류: {str(e)}")
+        return pd.DataFrame(), False
+
 @st.cache_data
 def load_broadcast_data():
     """Supabase에서 방송 데이터 로드"""
