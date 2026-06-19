@@ -37,8 +37,10 @@ def generate_broadcast_data():
         # 매 시간마다 상품 정보 추가
         product = products[timestamp.hour % len(products)]
 
+        end_time = timestamp + pd.Timedelta(hours=1)
         data.append({
             'timestamp': timestamp,
+            'end_time': end_time,
             'program_name': f"{product['name']} 특가 방송",
             'product_name': product['name'],
             'product_price': product['price'],
