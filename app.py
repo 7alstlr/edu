@@ -431,13 +431,19 @@ def load_broadcast_data_v2():
         st.error(f"❌ 방송 데이터 로드 중 오류: {str(e)}")
         return pd.DataFrame()
 
-def get_broadcast_info(timestamp, broadcast_df):
+def get_broadcast_info(timestamp, broadcast_df, check_prod_only=False):
     """특정 시간대의 방송 정보를 포맷팅"""
     if broadcast_df.empty:
         return "방송 정보 없음"
 
-    # 정확한 시간대 매칭
-    matching = broadcast_df[broadcast_df['timestamp'] == timestamp]
+    # PROD_DB만 선택된 경우
+    if check_prod_only and 'PROD_DB' not in st.session_state.applied_dbs:
+        return "방송 정보 없음"
+
+    # 시간만 비교 (분은 무시) - 1시간 방송 기간 대응
+    timestamp_hour = pd.Timestamp(timestamp).floor('H')
+    broadcast_df['hour'] = broadcast_df['timestamp'].dt.floor('H')
+    matching = broadcast_df[broadcast_df['hour'] == timestamp_hour]
 
     if matching.empty:
         return "방송 정보 없음"
@@ -661,15 +667,23 @@ with col1:
     fig_cpu = go.Figure()
     for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
-        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+        # PROD_DB만 방송 정보 표시
+        if db_name == 'PROD_DB':
+            db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>CPU: %{y:.1f}%<br><br>%{customdata}<extra></extra>'
+            customdata=db_data['broadcast_info']
+        else:
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>CPU: %{y:.1f}%<extra></extra>'
+            customdata=None
+
         fig_cpu.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['CPU사용율(%)'],
             mode='lines',
             name=db_name,
             line=dict(width=2),
-            customdata=db_data['broadcast_info'],
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>CPU: %{y:.1f}%<br><br>%{customdata}<extra></extra>'
+            customdata=customdata,
+            hovertemplate=hovertemplate
         ))
 
     fig_cpu.update_layout(
@@ -702,15 +716,23 @@ with col2:
     fig_session = go.Figure()
     for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
-        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+        # PROD_DB만 방송 정보 표시
+        if db_name == 'PROD_DB':
+            db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>세션: %{y:.0f}<br><br>%{customdata}<extra></extra>'
+            customdata=db_data['broadcast_info']
+        else:
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>세션: %{y:.0f}<extra></extra>'
+            customdata=None
+
         fig_session.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['Active Session 수'],
             mode='lines',
             name=db_name,
             line=dict(width=2),
-            customdata=db_data['broadcast_info'],
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>세션: %{y:.0f}<br><br>%{customdata}<extra></extra>'
+            customdata=customdata,
+            hovertemplate=hovertemplate
         ))
 
     fig_session.update_layout(
@@ -745,7 +767,15 @@ with col3:
     fig_lock = go.Figure()
     for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
-        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+        # PROD_DB만 방송 정보 표시
+        if db_name == 'PROD_DB':
+            db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Lock: %{y:.0f}<br><br>%{customdata}<extra></extra>'
+            customdata=db_data['broadcast_info']
+        else:
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Lock: %{y:.0f}<extra></extra>'
+            customdata=None
+
         fig_lock.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['Lock Session 수'],
@@ -753,8 +783,8 @@ with col3:
             name=db_name,
             line=dict(width=2),
             marker=dict(size=4),
-            customdata=db_data['broadcast_info'],
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Lock: %{y:.0f}<br><br>%{customdata}<extra></extra>'
+            customdata=customdata,
+            hovertemplate=hovertemplate
         ))
 
     fig_lock.update_layout(
@@ -787,7 +817,15 @@ with col4:
     fig_alert = go.Figure()
     for db_name in st.session_state.applied_dbs:
         db_data = filtered_df[filtered_df['DB명'] == db_name].sort_values('timestamp').copy()
-        db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+        # PROD_DB만 방송 정보 표시
+        if db_name == 'PROD_DB':
+            db_data['broadcast_info'] = db_data['timestamp'].apply(lambda ts: get_broadcast_info(ts, broadcast_df))
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Alert: %{y:.0f}<br><br>%{customdata}<extra></extra>'
+            customdata=db_data['broadcast_info']
+        else:
+            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Alert: %{y:.0f}<extra></extra>'
+            customdata=None
+
         fig_alert.add_trace(go.Scatter(
             x=db_data['timestamp'],
             y=db_data['AlertLog Count'],
@@ -795,8 +833,8 @@ with col4:
             name=db_name,
             line=dict(width=2),
             marker=dict(size=4),
-            customdata=db_data['broadcast_info'],
-            hovertemplate='<b>%{fullData.name}</b><br>%{x|%m/%d %H:%M}<br>Alert: %{y:.0f}<br><br>%{customdata}<extra></extra>'
+            customdata=customdata,
+            hovertemplate=hovertemplate
         ))
 
     fig_alert.update_layout(
@@ -828,7 +866,8 @@ with col4:
 st.markdown('---')
 st.subheader('📺 홈앤쇼핑 TV 편성표')
 
-if not broadcast_df.empty:
+# PROD_DB만 선택되어 있을 때만 방송 정보 표시
+if 'PROD_DB' in st.session_state.applied_dbs and not broadcast_df.empty:
     # 조회 기간에 해당하는 방송 정보 필터링
     filtered_broadcast = broadcast_df[
         (broadcast_df['timestamp'] >= st.session_state.applied_start) &
@@ -855,6 +894,8 @@ if not broadcast_df.empty:
             )
     else:
         st.info('선택한 기간에 방송 정보가 없습니다.')
+elif 'PROD_DB' not in st.session_state.applied_dbs:
+    st.info('💡 PROD_DB를 선택하면 방송 정보를 볼 수 있습니다.')
 else:
     st.warning('방송 데이터를 불러올 수 없습니다.')
 
