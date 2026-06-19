@@ -97,13 +97,13 @@ python upload_broadcast_to_supabase.py
 - **AI Summary**: Anthropic Claude API
 - **Data Processing**: Pandas, NumPy
 
-## 📚 상세 설정
+## 📚 기술 아키텍처
 
-더 자세한 설정 정보는 [CLAUDE.md](CLAUDE.md)를 참고해주세요.
+더 자세한 아키텍처 및 설정 정보는 [ARCHITECTURE.md](ARCHITECTURE.md)를 참고해주세요.
 
-## 📝 개발 일지
+## 📝 변경 이력
 
-프로젝트의 개발 이력 및 기술 결정사항은 [DEVELOPMENT.md](DEVELOPMENT.md)를 참고해주세요.
+프로젝트의 개발 이력 및 기술 결정사항은 [CHANGELOG.md](CHANGELOG.md)를 참고해주세요.
 
 ## ⚙️ 주요 특징
 

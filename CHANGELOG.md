@@ -1,4 +1,4 @@
-# 개발 일지 & 기술 결정사항
+# 변경 이력 & 기술 결정사항
 
 프로젝트의 개발 이력, 기술 결정, 구현 세부사항을 기록합니다.
 
@@ -237,4 +237,4 @@ else:
 
 **관련 문서:**
 - [README.md](README.md) - 프로젝트 소개
-- [CLAUDE.md](CLAUDE.md) - 기술 명시사항 및 설정
+- [ARCHITECTURE.md](ARCHITECTURE.md) - 기술 아키텍처 및 설정
