@@ -380,7 +380,7 @@ def load_data_v2():
         return pd.DataFrame(), False
 
 @st.cache_data
-def load_broadcast_data_v1():
+def load_broadcast_data_v2():
     """Supabase에서 방송 데이터 로드"""
     try:
         from supabase import create_client
@@ -811,7 +811,7 @@ st.markdown('---')
 st.subheader('📺 홈앤쇼핑 TV 편성표')
 
 # 방송 데이터 로드
-broadcast_df = load_broadcast_data_v1()
+broadcast_df = load_broadcast_data_v2()
 
 if not broadcast_df.empty:
     # 조회 기간에 해당하는 방송 정보 필터링
